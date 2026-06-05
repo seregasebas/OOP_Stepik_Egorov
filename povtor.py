@@ -9,13 +9,242 @@ print("Hello, World! I'm a povtor!")
 '--------------------------------------------'
 '--------------------------------------------'
 '--------------------------------------------'
+# def filter_even(func):
+#
+#     def wrapper(*args, **kwargs):
+#         res = []
+#         for arg in args:
+#             if isinstance(arg, int):
+#                 if arg % 2 == 0:
+#                     res.append(str(arg))
+#             else:
+#                 if len(arg) % 2 == 0 or arg == False:
+#                     res.append(str(arg))
+#         return func(*res, **kwargs)
+#     return wrapper
+#
+# def delete_short(func):
+#
+#     def wrapper(*args, **kwargs):
+#         res = {}
+#         for key, value in kwargs.items():
+#             if len(key) > 4:
+#                 res[key] = value
+#         return func(*args, **res)
+#     return wrapper
+
+# @delete_short
+# def info_kwargs(**kwargs):
+#     """Выводит информацию о переданных kwargs"""
+#     for k, v in sorted(kwargs.items()):
+#         print(f'{k} = {v}')
+#
+# info_kwargs(first_name="John", last_name="Doe", age=33)
+
+
+# @filter_even
+# def concatenate(*args):
+#     result = ""
+#     for arg in args:
+#         result += arg
+#     return result
+#
+# print(concatenate("Ну", "Когда", "Уже", "Я", "Выучу", "Питон?"))
+
+@filter_even
+@delete_short
+def concatenate(*args, **kwargs):
+    result = ""
+    for arg in args + tuple(kwargs.values()):
+        result += str(arg)
+    return result
+
+
+print(concatenate("Я", "хочу", "Выучить", "Питон", a="За", qwerty=10, c="Месяцев"))
 '--------------------------------------------'
+# def validate_all_kwargs_int_pos(func):
+#
+#     def wrapper(*args, **kwargs):
+#         for key, value in kwargs.items():
+#             if isinstance(value, int):
+#                 continue
+#             else:
+#                 print('Все именованные аргументы должны быть положительными числами')
+#                 return None
+#         return func(*args, **kwargs)
+#     return wrapper
+#
+# @validate_all_kwargs_int_pos
+# def concatenate(*args, **kwargs):
+#     result = ""
+#     for arg in args + tuple(kwargs.values()):
+#         result += str(arg)
+#     return result
+#
+#
+# print(concatenate(a="i", b='Love', c="Python"))
+#
+# @validate_all_kwargs_int_pos
+# def concatenate(*args, **kwargs):
+#     result = ""
+#     for arg in args + tuple(kwargs.values()):
+#         result += str(arg)
+#     return result
+#
+#
+# print(concatenate(a=10, b=20, c=50))
 '--------------------------------------------'
+# def validate_all_args_str(func):
+#
+#     def wrapper(*args, **kwargs):
+#         for arg in args:
+#             if isinstance(arg, str):
+#                 continue
+#             else:
+#                 print('Все аргументы должны быть строками')
+#                 return None
+#         return func(*args, **kwargs)
+#     return wrapper
+#
+# @validate_all_args_str
+# def concatenate(*args):
+#     result = ""
+#     for arg in args:
+#         result += arg
+#     return result
+#
+#
+# print(concatenate("Через", 9, "Месяцев"))
+
+# @validate_all_args_str
+# def concatenate(*args):
+#     result = ""
+#     for arg in args:
+#         result += arg
+#     return result
+#
+#
+# print(concatenate("Ну", "Когда", "Уже", "Я", "Выучу", "Питон?"))
 '--------------------------------------------'
+# def first_validator(func):
+#     def my_wrapper(*args, **kwargs):
+#         print(f"Начинаем важную проверку")
+#         if len(args) == 3:
+#             func(*args, **kwargs)
+#         else:
+#             print(f"Важная проверка не пройдена")
+#             return None
+#         print(f"Заканчиваем важную проверку")
+#
+#     return my_wrapper
+#
+#
+# def second_validator(func):
+#     def my_wrapper(*args, **kwargs):
+#         print(f"Начинаем самую важную проверку")
+#         if kwargs.get('name') == 'Boris':
+#             func(*args)
+#         else:
+#             print(f"Самая важная проверка не пройдена")
+#             return None
+#         print(f"Заканчиваем самую важную проверку")
+#
+#     return my_wrapper
+#
+#
+# # используйте декораторы
+# @second_validator
+# @first_validator
+# def sum_values(*args):
+#     print(f'Получили результат равный {sum(args)}')
+#
+# sum_values(11, 33, 33, name='Boris')
 '--------------------------------------------'
+# def uppercase_elements(func):
+#     def wrapper(*args, **kwargs):
+#         res = func(*args, **kwargs)
+#         if isinstance(res, list):
+#             res_new = []
+#             for element in res:
+#                 if isinstance(element, str):
+#                     res_new.append(element.upper())
+#                 else:
+#                     res_new.append(element)
+#         elif isinstance(res, dict):
+#             res_new = {}
+#             for key, value in res.items():
+#                 if isinstance(key, str):
+#                     key = key.upper()
+#                     res_new[key] = value
+#                 else:
+#                     res_new[key] = value
+#
+#         return res_new
+#
+#     return wrapper
+#
+# @uppercase_elements
+# def my_func(**kwargs):
+#     return {1: 'one', 2: 'store', 'three': 3, 'four': 4} | kwargs
+#
+# print(my_func(**{'Five': 5, 'sIx': 6}))
+
+# @uppercase_elements
+# def my_func(name, surname):
+#     return ['temple', 'store', name, surname, *[1, 2, 3]]
+#
+# print(my_func('Gerard', 'Pique'))
 '--------------------------------------------'
+# def decorator(func):
+#
+#     def inner(*args, **kwargs):
+#         print(f'---Start calculation---')
+#         res = func(*args, **kwargs)
+#         print(f'---Finish calculation. Result is {res}---')
+#     return inner
+#
+# @decorator
+# def add_with_factor(*values, factor=1):
+#     return sum(values) * factor
+#
+# add_with_factor(1, 4, 5, 6, factor=2)
 '--------------------------------------------'
+# def uppercase(func):
+#     def inner(n, i, rate):
+#         res = func(n, i, rate)
+#         return res.upper()
+#
+#     return inner
+#
+#
+# # Задекорируйте функцию calculate_tax
+# @uppercase
+# def calculate_tax(name, income, tax_rate):
+#     tax = income - income * (1 - tax_rate / 100)
+#     return f'{name} должен заплатить налог {tax}$'
+#
+#
+# print(calculate_tax("Ivan", 5000, 25))
+# print(calculate_tax("vaSilIy", 15000, 30))
+# print(calculate_tax("depardieu", 215000, 40))
 '--------------------------------------------'
+# def swapcase(func):
+#     def wrapper(*args, **kwargs):
+#         func_res = func(*args, **kwargs)
+#         print(f'Функция func вернула значение "{func_res}"')
+#         return func_res.swapcase()
+#     return wrapper
+#
+#
+# @swapcase
+# def say_hello_to(name, surname):
+#     return f'Hello {name} {surname}'
+#
+#
+# res = say_hello_to('Vasya', 'Ivanov')
+# print(f'{res=}')
+#
+# print(say_hello_to('gennadi', 'LOSKOV'))
 '--------------------------------------------'
 # def create_dict():
 #     count = 0
