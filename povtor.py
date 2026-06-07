@@ -1,5 +1,7 @@
 #from datetime import datetime
 #from time import perf_counter, sleep
+from functools import wraps
+from copy import copy
 
 print("Hello, World! I'm a povtor!")
 
@@ -8,6 +10,188 @@ print("Hello, World! I'm a povtor!")
 '--------------------------------------------'
 '--------------------------------------------'
 '--------------------------------------------'
+'--------------------------------------------'
+'--------------------------------------------'
+'--------------------------------------------'
+# def reverse(func):
+#
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         return func(*args[-1::-1])
+#     return wrapper
+#
+# @reverse
+# def get_max_index(*args):
+#     if not args:
+#         return None
+#     max_index = 0
+#     for i in range(len(args)):
+#         if args[i] > args[max_index]:
+#             max_index = i
+#     return max_index
+#
+#
+# print(get_max_index(1, 2, 3, 4, 5))
+# print(get_max_index(3, 4, 1, 5, 2))
+# print(get_max_index(5, 3, 4, 1, 2))
+# print(get_max_index.__name__)
+'--------------------------------------------'
+# def explicit_args(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         if args:
+#             print(f'Вы не можете передать позиционные аргументы. Используйте именованный способ передачи значений')
+#             return None
+#         else:
+#             return func(*args, **kwargs)
+#     return wrapper
+#
+# @explicit_args
+# def add(a: int, b: int) -> int:
+#     '''Возвращает сумму двух чисел'''
+#     return a + b
+#
+# print(add(10, 20))
+#
+# @explicit_args
+# def add(a: int, b: int) -> int:
+#     '''Возвращает сумму двух чисел'''
+#     return a + b
+#
+# print(add(a=10, b=20))
+'--------------------------------------------'
+# def add_args(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         return func('begin', *args, 'end', **kwargs)
+#     return wrapper
+#
+#
+# @add_args
+# def find_max_word(*args):
+#     """
+#     Возвращает слово максимальной длины
+#     """
+#     return max(args, key=len)
+#
+# print(find_max_word('my'))
+# print(find_max_word('my', 'how'))
+# print(find_max_word('my', 'how', 'maximum'))
+# print(find_max_word.__name__)
+# print(find_max_word.__doc__.strip())
+
+# @add_args
+# def concatenate(*args):
+#     """
+#     Возвращает конкатенацию переданных строк
+#     """
+#     return ', '.join(args)
+#
+#
+# print(concatenate('hello', 'world', 'my', 'name is', 'Artem'))
+# print(concatenate('my', 'name is', 'Artem'))
+# print(concatenate.__name__)
+# print(concatenate.__doc__.strip())
+'--------------------------------------------'
+# def no_side_effects_decorator(func):
+#     @wraps(func)
+#     def inner(*args, **kwargs):
+#         return func(args[0].copy(), *args[1:],  **kwargs)
+#     return inner
+#
+# @no_side_effects_decorator
+# def add_element(data, element):
+#     data.append(element)
+#     return data
+#
+#
+# my_list = [1, 2, 3]
+# print('Результат вызова =', add_element(my_list, 4))
+# print('Результат вызова =', add_element(my_list, 5))
+# print(my_list)
+# print(add_element.__name__)
+#
+# @no_side_effects_decorator
+# def add_element(data, key, value=None):
+#     data[key] = value
+#     return data
+#
+#
+# my_dict = {1: 'Hello', 2: 'World'}
+# print('Результат вызова =', add_element(my_dict, 3))
+# print('Результат вызова =', add_element(my_dict, 4, 'four'))
+# print(my_dict)
+# print(add_element.__name__)
+'--------------------------------------------'
+# def limit_query(func):
+#     count = 0
+#     def wrapper(*args, **kwargs):
+#         nonlocal count
+#         if count < 3:
+#             count += 1
+#         else:
+#             print(f'Лимит вызовов закончен, все 3 попытки израсходованы')
+#             return None
+#         return func(*args, **kwargs)
+#     wrapper.__name__ = func.__name__
+#     wrapper.__doc__ = func.__doc__
+#     wrapper.__annotations__ = func.__annotations__
+#     return wrapper
+#
+# @limit_query
+# def add(a: int, b: int):
+#     return a + b
+#
+# print(add(4, 5))
+# print(add(5, 8))
+# print(add(9, 43))
+# print(add(10, 33))
+# print(add.__name__)
+# print(add.__doc__)
+# print(add.__annotations__)
+'--------------------------------------------'
+# # def table(func):
+# #     def inner(*args, **kwargs):
+# #         print('<table>')
+# #         func(*args, **kwargs)
+# #         print('</table>')
+# #
+# #     return inner
+# #
+# #
+# # def say_hello(name: str, surname: str) -> None:
+# #     """Функция приветствует человека"""
+# #     print('Hello', name, surname)
+# #
+# #
+# # print('Before decoration')
+# # print(f'{say_hello.__name__        =  }')
+# # print(f'{say_hello.__doc__         =  }')
+# # print(f'{say_hello.__annotations__ =  }')
+# #
+# # say_hello = table(say_hello) # выполняем декорирование
+# #
+# # print('After decoration')
+# # print(f'{say_hello.__name__        =  }')
+# # print(f'{say_hello.__doc__         =  }')
+# # print(f'{say_hello.__annotations__ =  }')
+#
+# def table(func):
+#     def inner(*args, **kwargs):
+#         print('<table>')
+#         func(*args, **kwargs)
+#         print('</table>')
+#
+#     return inner
+#
+# @table
+# def say_hello(name: str, surname: str) -> None:
+#     """Функция приветствует человека"""
+#     print('Hello', name, surname)
+#
+# print(f'{say_hello.__name__        =  }')
+# print(f'{say_hello.__doc__         =  }')
+# print(f'{say_hello.__annotations__ =  }')
 '--------------------------------------------'
 # def filter_even(func):
 #
@@ -51,16 +235,16 @@ print("Hello, World! I'm a povtor!")
 #
 # print(concatenate("Ну", "Когда", "Уже", "Я", "Выучу", "Питон?"))
 
-@filter_even
-@delete_short
-def concatenate(*args, **kwargs):
-    result = ""
-    for arg in args + tuple(kwargs.values()):
-        result += str(arg)
-    return result
-
-
-print(concatenate("Я", "хочу", "Выучить", "Питон", a="За", qwerty=10, c="Месяцев"))
+# @filter_even
+# @delete_short
+# def concatenate(*args, **kwargs):
+#     result = ""
+#     for arg in args + tuple(kwargs.values()):
+#         result += str(arg)
+#     return result
+#
+#
+# print(concatenate("Я", "хочу", "Выучить", "Питон", a="За", qwerty=10, c="Месяцев"))
 '--------------------------------------------'
 # def validate_all_kwargs_int_pos(func):
 #
