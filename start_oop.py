@@ -8,98 +8,133 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
-# def html_tag(name_tag='h1'):
-#     def decorator(func):
-#         def inner(*args, **kwargs):
-#             result = func(*args, **kwargs)
-#             return f'<{name_tag}>{result}</{name_tag}>'
-#
-#         return inner
-#
-#     return decorator
-#
-#
-# @html_tag(name_tag='table')
-# def say_hello_to(name, surname):
-#     return f'Hello {name} {surname}'
-#
-#
-# print(say_hello_to('Vasiliy', 'Ytkin'))
 '-------------------------------------------------------'
-# def decorator_factory(a, b):
-#     print('Запуск функции создания декоратора')
-#
-#     def decorator(fn):
-#         print("Запуск декоратора")
-#         def wrapper(*args, **kwargs):
-#             print("Запуск функции wrapper")
-#             print('Переданные переменные: ', a, b)
-#             return fn(*args, **kwargs)
-#         return wrapper
-#     return decorator
-#
-#
-# print('Начало работы')
-#
-# @decorator_factory(10, 20)
-# def original_func():
-#     print('Запуск оригинальной функции')
-#
-# original_func()
 '-------------------------------------------------------'
-# def counting_calls(func):
-#     @wraps(func)
-#     def wrapper(*args, **kwargs):
-#         wrapper.call_count += 1
-#         return func(*args, **kwargs)
-#     wrapper.call_count = 0
-#     return wrapper
-#
-# @counting_calls
-# def add(a: int, b: int) -> int:
-#     '''Возвращает сумму двух чисел'''
-#     return a + b
-#
-#
-# print(add.__name__)
-# print(add.__doc__)
-#
-# print(add(10, b=20))
-# print(add.call_count)
-# print(add(30, 5))
-# print(add.call_count)
 '-------------------------------------------------------'
-# def monkey_patching(func):
-#     @wraps(func)
-#     def wrapper(*args, **kwargs):
-#         args = ('Monkey' for arg in args)
-#         kwargs = {k:'patching' for k, v in kwargs.items()}
-#         return func(*args, **kwargs)
-#     return wrapper
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+# class Point:
+#     def set_coordinates(self, x, y):
+#         self.x = x
+#         self.y = y
 #
-# @monkey_patching
-# def info_kwargs(**kwargs):
-#     """Выводит информацию о переданных kwargs"""
-#     for k, v in sorted(kwargs.items()):
-#         print(f'{k} = {v}')
+#     def get_distance_to_origin(self):
+#         if hasattr(self, 'x') and hasattr(self, 'y'):
+#             return (self.x ** 2 + self.y ** 2) ** 0.5
+#         return None
 #
-# info_kwargs(first_name="John", last_name="Doe", age=33)
-# info_kwargs(c=43, b= 32, a=32)
-# print(info_kwargs.__name__)
-# print(info_kwargs.__doc__.strip())
-#
-# @monkey_patching
-# def concatenate(*args):
-#     """
-#     Возвращает конкатенацию переданных строк
-#     """
-#     return ', '.join(args)
+#     def get_distance(self, obj):
+#         if isinstance(obj, Point):
+#             if hasattr(self, 'x') and hasattr(self, 'y') and hasattr(obj, 'x') and hasattr(obj, 'y'):
+#                 return ((obj.x - self.x) ** 2 + (obj.y - self.y) ** 2) ** 0.5
+#             else:
+#                 print('Координаты не заданы')
+#                 return None
+#         else:
+#             print('Передана не точка')
+#             return None
 #
 #
-# print(concatenate('hello', 'world', 'my', 'name is', 'Artem'))
-# print(concatenate('my', 'name is', 'Artem'))
-# print(concatenate.__name__)
-# print(concatenate.__doc__.strip())
+#     def display(self):
+#         if hasattr(self, 'x') and hasattr(self, 'y'):
+#             print(f"Point({self.x}, {self.y})")
+#         else:
+#             print('Координаты не заданы')
+#
+# p1 = Point()
+# p1.set_coordinates(1, 2)
+# print(p1.get_distance(100))
+# print(p1.get_distance([1, 2, 3]))
+# print(p1.get_distance(Point()))
+
+# p1 = Point()
+# p2 = Point()
+# p1.set_coordinates(1, 2)
+# p2.set_coordinates(4, 6)
+# p1.display()
+# p2.display()
+# print(p1.get_distance(p2))
+# print(p2.get_distance(p1))
+#
+# p1 = Point()
+# p2 = Point()
+# print(p1.get_distance(p2))
+# p1.set_coordinates(1, 2)
+# print(p1.get_distance(p2))
+# p2.set_coordinates(4, 6)
+# print(p1.get_distance(p2))
+'-------------------------------------------------------'
+# class Point():
+#
+#     def set_coordinates(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def get_distance_to_origin(self):
+#         if hasattr(self, 'x') and hasattr(self, 'y'):
+#             return (self.x**2 + self.y**2)**0.5
+#         else:
+#             return None
+#
+#     def display(self):
+#         if not hasattr(self, 'x') or not hasattr(self, 'y'):
+#             print('Координаты не заданы')
+#         else:
+#             print(f'Point({self.x}, {self.y})')
+#
+# p3 = Point()
+# p3.display()
+# print(p3.get_distance_to_origin())
+# p3.x = 4
+# p3.display()
+# print(p3.get_distance_to_origin())
+# p3.y = 3
+# p3.display()
+# print(p3.get_distance_to_origin())
+#
+# p1 = Point()
+# p1.set_coordinates(6, 8)
+# p1.display()
+# print(p1.get_distance_to_origin())
+#
+# p2 = Point()
+# p2.display()
+# p2.set_coordinates(3, 4)
+# p2.display()
+# print(p2.get_distance_to_origin())
+'-------------------------------------------------------'
+# class Counter():
+#
+#     def start_from(self, start = 0):
+#         self.start = start
+#
+#     def increment(self):
+#         self.start += 1
+#
+#     def display(self):
+#         print(f'Текущее значение счетчика = {self.start}')
+#
+#     def reset(self):
+#         self.start = 0
+#
+# num_1 = Counter()
+# num_1.start_from(89)
+# num_1.increment()
+# num_1.increment()
+# num_1.increment()
+# num_1.display()
+# num_1.reset()
+# num_1.display()
+'-------------------------------------------------------'
+# class Lion():
+#
+#     def roar(self):
+#         print('Rrrrrrr!!!')
+#
+# simba = Lion()
+# simba.roar()
 '-------------------------------------------------------'
 # class Config:
 #     pass
