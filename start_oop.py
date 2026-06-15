@@ -11,7 +11,88 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class SoccerPlayer():
+#
+#     def __init__(self, name, surname):
+#         self.name = name
+#         self.surname = surname
+#         self.goals = 0
+#         self.assists = 0
+#
+#     def score(self, goals = 1):
+#         self.goals += goals
+#
+#     def make_assist(self, assists = 1):
+#         self.assists += assists
+#
+#     def statistics(self):
+#         print(f'{self.surname} {self.name} - голы: {self.goals}, передачи: {self.assists}')
+#
+# # Ниже код для проверки методов класса SoccerPlayer
+# leo = SoccerPlayer('Leo', 'Messi')
+# assert isinstance(leo, SoccerPlayer)
+# assert leo.__dict__ == {'name': 'Leo', 'surname': 'Messi', 'goals': 0, 'assists': 0}
+# leo.score(700)
+# assert leo.goals == 700
+# leo.make_assist(500)
+# assert leo.assists == 500
+#
+# leo.statistics()
+#
+# kokorin = SoccerPlayer('Alex', 'Kokorin')
+# assert isinstance(kokorin, SoccerPlayer)
+# assert kokorin.name == 'Alex'
+# assert kokorin.surname == 'Kokorin'
+# assert kokorin.assists == 0
+# assert kokorin.goals == 0
+# kokorin.score()
+# assert kokorin.goals == 1
+# kokorin.score(5)
+# assert kokorin.goals == 6
+# kokorin.make_assist()
+# assert kokorin.assists == 1
+# kokorin.make_assist(10)
+# assert kokorin.assists == 11
+#
+# kokorin.statistics()
+#
+#
+# obi = SoccerPlayer('Оби-Ван', 'Кеноби')
+# obi.make_assist()
+# assert obi.name == 'Оби-Ван'
+# assert obi.surname == 'Кеноби'
+# assert obi.__dict__ == {'name': 'Оби-Ван', 'surname': 'Кеноби', 'goals': 0, 'assists': 1}
+# obi.statistics()
+#
+# mila = SoccerPlayer('Mila', 'Kunis')
+# mila.make_assist()
+# mila.statistics()
 '-------------------------------------------------------'
+# class Laptop():
+#
+#     def __init__(self, brand, model, price):
+#         self.brand = brand
+#         self.model = model
+#         self.price = price
+#         self.laptop_name = f'{brand} {model}'
+#
+# laptop1, laptop2 = Laptop('hp', '15-bw0xx', 57000), Laptop('hp', '15-bw0xx', 57000)
+#
+# assert isinstance(laptop1, Laptop)
+# assert isinstance(laptop2, Laptop)
+#
+# hp = Laptop('hp', '15-bw0xx', 57000)
+# assert hp.laptop_name == 'hp 15-bw0xx'
+# assert hp.price == 57000
+# assert isinstance(hp, Laptop)
+#
+# lenovo = Laptop('lenovo', 'z-570-dx', 61000)
+# assert lenovo.brand == 'lenovo'
+# assert lenovo.model == 'z-570-dx'
+# assert lenovo.price == 61000
+# assert lenovo.laptop_name == 'lenovo z-570-dx'
+# assert isinstance(lenovo, Laptop)
+# print('Good')
 '-------------------------------------------------------'
 # class Person:
 #     def __init__(self, name, age):
