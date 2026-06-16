@@ -7,6 +7,127 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+# class Worker:
+#
+#     def __init__(self, name, salary, gender, passport):
+#         self.name = name
+#         self.salary = salary
+#         self.gender = gender
+#         self.passport = passport
+#
+#     def get_info(self):
+#         print(f'Worker {self.name}; passport-{self.passport}')
+#
+# persons= [
+#     ('Allison Hill', 334053, 'M', '1635644202'),
+#     ('Megan Mcclain', 191161, 'F', '2101101595'),
+#     ('Brandon Hall', 731262, 'M', '6054749119'),
+#     ('Michelle Miles', 539898, 'M', '1355368461'),
+#     ('Donald Booth', 895667, 'M', '7736670978'),
+#     ('Gina Moore', 900581, 'F', '7018476624'),
+#     ('James Howard', 460663, 'F', '5461900982'),
+#     ('Monica Herrera', 496922, 'M', '2955495768'),
+#     ('Sandra Montgomery', 479201, 'M', '5111859731'),
+#     ('Amber Perez', 403445, 'M', '0602870126')
+# ]
+#
+# worker_objects = [Worker(name, salary, gender, passport) for name, salary, gender, passport in persons]
+#
+# # for person in persons:
+# #     worker_objects.append(Worker(person[0], person[1], person[2], person[3]))
+#
+# for worker_object in worker_objects:
+#     worker_object.get_info()
+'-------------------------------------------------------'
+# class Stack:
+#
+#     def __init__(self):
+#         self.values = []
+#
+#     def push(self, item):
+#         self.values.append(item)
+#
+#     def pop(self):
+#         if len(self.values) == 0:
+#             print('Empty Stack')
+#             return None
+#         else:
+#             element = self.values.pop()
+#             return element
+#
+#     def peek(self):
+#         if len(self.values) == 0:
+#             print('Empty Stack')
+#             return None
+#         else:
+#             return self.values[-1]
+#
+#     def is_empty(self):
+#         return False if len(self.values) > 0 else True
+#
+#     def size(self):
+#         return len(self.values)
+#
+#
+# s = Stack()
+# assert s.values == []
+# assert isinstance(s, Stack)
+#
+# s.peek()  # распечатает 'Empty Stack'
+# assert s.is_empty() is True
+# s.push('cat')
+# assert s.size() == 1
+# assert s.peek() == 'cat'
+#
+# s.push('dog')
+# assert s.size() == 2
+# assert s.peek() == 'dog'
+#
+# s.push(True)
+# assert s.size() == 3
+# assert s.is_empty() is False
+#
+# s.push(777)
+# assert s.size() == 4
+#
+# assert s.pop() == 777
+# assert s.size() == 3
+#
+# assert s.pop() is True
+# assert s.size() == 2
+#
+# s.push(123)
+# s.push(123456)
+# assert s.peek() == 123456
+# assert s.size() == 4
+#
+# assert s.pop() == 123456
+# assert s.pop() == 123
+# assert s.pop() == 'dog'
+# assert s.is_empty() is False
+# assert s.pop() == 'cat'
+# assert s.is_empty() is True
+#
+#
+# d = Stack()
+# assert d.peek() is None  # Печатает "Empty Stack"
+# assert d.pop() is None  # Печатает "Empty Stack"
+# d.push('hello')
+# assert d.size() == 1
+# d.push('world')
+# assert d.size() == 2
+# assert d.peek() == 'world'
+# assert d.pop() == 'world'
+# assert d.peek() == 'hello'
+'-------------------------------------------------------'
 # class Numbers:
 #
 #     def __init__(self, *args):
