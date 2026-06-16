@@ -7,9 +7,133 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Numbers:
+#
+#     def __init__(self, *args):
+#         self.numbers = list(args)
+#     def add_number(self, number: int):
+#         self.numbers.append(number)
+#     def get_positive(self):
+#         return [num for num in self.numbers if num > 0]
+#     def get_negative(self):
+#         return [num for num in self.numbers if num < 0]
+#     def get_zeroes(self):
+#         return [num for num in self.numbers if num == 0]
+#
+# nums = Numbers(1, 2, -4, -5, 3)
+#
+# print(nums.get_positive())
+# print(nums.get_negative())
+# print(nums.get_zeroes())
+#
+# nums = Numbers(10, 20, 30, 0, 0, 5)
+#
+# print(nums.get_positive())
+# print(nums.get_zeroes())
+# nums.add_number(100)
+# nums.add_number(0)
+# nums.add_number(7)
+# print(nums.get_positive())
+# print(nums.get_zeroes())
 '-------------------------------------------------------'
+# class Dog():
+#
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#     def description(self):
+#         return f'{self.name} is {self.age} years old'
+#
+#     def speak(self, sound: str):
+#         return f'{self.name} says {sound}'
+#
+# # Ниже код для проверки класса Dog
+# curt = Dog("Curt", 4)
+# assert isinstance(curt, Dog)
+# assert curt.name == 'Curt'
+# assert curt.age == 4
+# assert curt.description() == 'Curt is 4 years old'
+# assert curt.speak("Wo") == 'Curt says Wo'
+# assert curt.speak("Bow") == 'Curt says Bow'
+#
+# jack = Dog("Jack", 12)
+# assert isinstance(curt, Dog)
+# assert jack.name == 'Jack'
+# assert jack.age == 12
+# assert jack.description() == 'Jack is 12 years old'
+# assert jack.speak("Woof Woof") == 'Jack says Woof Woof'
+# assert jack.speak("Bow Wow") == 'Jack says Bow Wow'
+#
+# assert Dog('Karl', 6).description() == 'Karl is 6 years old'
+# print('Good')
 '-------------------------------------------------------'
+# class Person():
+#
+#     def __init__(self, first_name , last_name, age):
+#         self.first_name = first_name
+#         self.last_name = last_name
+#         self.age = age
+#
+#     def full_name(self):
+#         return f'{self.last_name} {self.first_name}'
+#
+#     def is_adult(self):
+#         return True if self.age >= 18 else False
+#
+# p1 = Person('Ash', 'Ketchum', 20)
+# assert isinstance(p1, Person)
+# assert p1.full_name() == 'Ketchum Ash'
+# assert p1.age == 20
+# assert p1.first_name == 'Ash'
+# assert p1.last_name == 'Ketchum'
+# assert p1.is_adult() is True
+#
+# p2 = Person('Hermione', 'Granger', 16)
+# assert isinstance(p2, Person)
+# assert p2.age == 16
+# assert p2.first_name == 'Hermione'
+# assert p2.last_name == 'Granger'
+# assert p2.full_name() == 'Granger Hermione'
+# assert p2.is_adult() is False
+# print('Good')
+#
+# print(p2.__dict__)
 '-------------------------------------------------------'
+# class Zebra():
+#
+#     def __init__(self):
+#         self.count = 0
+#
+#     def which_stripe(self):
+#         if self.count % 2 == 0:
+#             print('Полоска белая')
+#             self.count += 1
+#         else:
+#             print('Полоска черная')
+#             self.count += 1
+#
+#     def run_away(self):
+#         print('Oh, Sugar Honey Ice Tea')
+#
+# # zebra = Zebra()
+# # zebra.run_away()
+# # zebra.which_stripe()
+# # zebra.which_stripe()
+# # zebra.which_stripe()
+# # zebra.which_stripe()
+# # zebra.which_stripe()
+# # zebra.run_away()
+#
+# zebra_1 = Zebra()
+# zebra_2 = Zebra()
+# zebra_1.which_stripe()
+# zebra_2.which_stripe()
+# zebra_1.which_stripe()
+# zebra_1.which_stripe()
+# zebra_1.which_stripe()
+# zebra_2.which_stripe()
+# zebra_2.which_stripe()
 '-------------------------------------------------------'
 # class SoccerPlayer():
 #
