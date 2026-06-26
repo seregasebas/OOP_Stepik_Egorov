@@ -13,42 +13,106 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Person:
+#
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#     def display_person_info(self):
+#         print(f'Person: {self.name}, {self.age}')
+#
+# class Company:
+#
+#     def __init__(self, company_name, location):
+#         self.company_name = company_name
+#         self.location = location
+#
+#     def display_company_info(self):
+#         print(f'Company: {self.company_name}, {self.location}')
+#
+# class Employee:
+#
+#     def __init__(self, name, age, company_name, location):
+#         self.name = name
+#         self.age = age
+#         self.company_name = company_name
+#         self.location = location
+#         self.personal_data = Person(name=name, age=age)
+#         self.work = Company(company_name=company_name, location=location)
+
+ivan = Person('Ivan', 32)
+assert ivan.name == 'Ivan'
+assert ivan.age == 32
+ivan.display_person_info()
+
+zara = Company('Zara', 'Prague')
+assert zara.company_name == 'Zara'
+assert zara.location == 'Prague'
+zara.display_company_info()
+
+
+emp = Employee('Jessica', 28, 'Google', 'Atlanta')
+assert isinstance(emp.personal_data, Person)
+assert isinstance(emp.work, Company)
+
+assert emp.personal_data.name == 'Jessica'
+assert emp.personal_data.age == 28
+emp.personal_data.display_person_info()
+
+assert emp.work.company_name == 'Google'
+assert emp.work.location == 'Atlanta'
+emp.work.display_company_info()
+
+emp2 = Employee('Kolya', 11, 'Facebook', 'Seattle')
+assert isinstance(emp2.personal_data, Person)
+assert isinstance(emp2.work, Company)
+
+assert emp2.personal_data.name == 'Kolya'
+assert emp2.personal_data.age == 11
+emp2.personal_data.display_person_info()
+
+assert emp2.work.company_name == 'Facebook'
+assert emp2.work.location == 'Seattle'
+emp2.work.display_company_info()
+
+
 '-------------------------------------------------------'
-class CustomLabel:
-
-    def __init__(self, text, **kwargs):
-        self.text = text
-        self.config(**kwargs)
-
-    def config(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-# Ниже код для проверки методов класса CustomLabel
-label1 = CustomLabel(text="Hello Python", fg="#eee", bg="#333")
-label2 = CustomLabel(text="Username")
-label3 = CustomLabel(text="Password", font=("Comic Sans MS", 24, "bold"), bd=20, bg='#ffaaaa')
-label4 = CustomLabel(text="Hello", bd=20, bg='#ffaaaa')
-label5 = CustomLabel(text="qwwerty", a=20, b='#ffaaaa', r=[3, 4, 5, 6], p=32)
-
-assert label1.__dict__ == {'text': 'Hello Python', 'fg': '#eee', 'bg': '#333'}
-assert label2.__dict__ == {'text': 'Username'}
-assert label3.__dict__ == {'text': 'Password', 'font': ('Comic Sans MS', 24, 'bold'), 'bd': 20, 'bg': '#ffaaaa'}
-assert label4.__dict__ == {'text': 'Hello', 'bd': 20, 'bg': '#ffaaaa'}
-assert label5.__dict__ == {'text': 'qwwerty', 'a': 20, 'b': '#ffaaaa', 'r': [3, 4, 5, 6], 'p': 32}
-
-print(label1.__dict__)
-print(label2.__dict__)
-print(label3.__dict__)
-print(label4.__dict__)
-print(label5.__dict__)
-
-label4.config(color='red', bd=100)
-label5.config(color='red', bd=100, a=32, b=432, p=100, z=432)
-
-assert label4.__dict__ == {'text': 'Hello', 'bd': 100, 'bg': '#ffaaaa', 'color': 'red'}
-assert label5.__dict__ == {'text': 'qwwerty', 'a': 32, 'b': 432, 'r': [3, 4, 5, 6], 'p': 100,
-                           'color': 'red', 'bd': 100, 'z': 432}
+# class CustomLabel:
+#
+#     def __init__(self, text, **kwargs):
+#         self.text = text
+#         self.config(**kwargs)
+#
+#     def config(self, **kwargs):
+#         for key, value in kwargs.items():
+#             setattr(self, key, value)
+#
+# # Ниже код для проверки методов класса CustomLabel
+# label1 = CustomLabel(text="Hello Python", fg="#eee", bg="#333")
+# label2 = CustomLabel(text="Username")
+# label3 = CustomLabel(text="Password", font=("Comic Sans MS", 24, "bold"), bd=20, bg='#ffaaaa')
+# label4 = CustomLabel(text="Hello", bd=20, bg='#ffaaaa')
+# label5 = CustomLabel(text="qwwerty", a=20, b='#ffaaaa', r=[3, 4, 5, 6], p=32)
+#
+# assert label1.__dict__ == {'text': 'Hello Python', 'fg': '#eee', 'bg': '#333'}
+# assert label2.__dict__ == {'text': 'Username'}
+# assert label3.__dict__ == {'text': 'Password', 'font': ('Comic Sans MS', 24, 'bold'), 'bd': 20, 'bg': '#ffaaaa'}
+# assert label4.__dict__ == {'text': 'Hello', 'bd': 20, 'bg': '#ffaaaa'}
+# assert label5.__dict__ == {'text': 'qwwerty', 'a': 20, 'b': '#ffaaaa', 'r': [3, 4, 5, 6], 'p': 32}
+#
+# print(label1.__dict__)
+# print(label2.__dict__)
+# print(label3.__dict__)
+# print(label4.__dict__)
+# print(label5.__dict__)
+#
+# label4.config(color='red', bd=100)
+# label5.config(color='red', bd=100, a=32, b=432, p=100, z=432)
+#
+# assert label4.__dict__ == {'text': 'Hello', 'bd': 100, 'bg': '#ffaaaa', 'color': 'red'}
+# assert label5.__dict__ == {'text': 'qwwerty', 'a': 32, 'b': 432, 'r': [3, 4, 5, 6], 'p': 100,
+#                            'color': 'red', 'bd': 100, 'z': 432}
 '-------------------------------------------------------'
 # class Worker:
 #
