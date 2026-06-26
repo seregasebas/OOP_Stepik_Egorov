@@ -11,7 +11,114 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Triangle:
+#
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def is_exists(self):
+#         return self.a < self.b + self.c and self.b < self.c + self.a and self.c < self.a + self.b
+#
+#     def is_equilateral(self):
+#         return self.a == self.b == self.c
+#
+#     def is_isosceles(self):
+#         return self.is_exists() and (self.a == self.b or self.a == self.c or self.b == self.c)
+#
+# triangle = Triangle(5, 16, 5)
+# print(f"Is Triangle exist: {triangle.is_exists()}")
+# print(f"Is Equilateral: {triangle.is_equilateral()}")
+# print(f"Is Isosceles: {triangle.is_isosceles()}")
 '-------------------------------------------------------'
+# class Task:
+#     def __init__(self, name , description, status = False):
+#         self.name = name
+#         self.description = description
+#         self.status = status
+#
+#     def display(self):
+#         if self.status:
+#             print(f'{self.name} (Сделана)')
+#         else:
+#             print(f'{self.name} (Не сделана)')
+#
+# class TaskList:
+#     def __init__(self):
+#         self.tasks = []
+#
+#     def add_task(self, task):
+#         self.tasks.append(task)
+#
+#     def remove_task(self, task):
+#         self.tasks.remove(task)
+#
+# class TaskManager:
+#     def __init__(self, task_list: TaskList):
+#         self.task_list = task_list
+#
+#     def mark_done(self, task: Task):
+#         self.task = task
+#         self.task.status = True
+#
+#     def mark_undone(self, task: Task):
+#         self.task = task
+#         self.task.status = False
+#
+#     def show_tasks(self):
+#         for task in self.task_list.tasks:
+#             task.display()
+#
+# # Ниже код для проверки классов Task, TaskList и TaskManager
+#
+# # Создаем список задач
+# todo = TaskList()
+# assert todo.tasks == []
+#
+# # Создаем несколько задач и добавляем их в список
+# task1 = Task("Стирка", "Постирать трусы, носки, слюнявчики")
+# assert task1.name == 'Стирка'
+# assert task1.description == 'Постирать трусы, носки, слюнявчики'
+# assert task1.status is False
+# task1.display()
+#
+# todo.add_task(task1)
+# assert len(todo.tasks) == 1
+#
+# task2 = Task("Продукты", "Купить лук чеснок огурцы хлеб и биток")
+# assert task2.name == 'Продукты'
+# assert task2.description == 'Купить лук чеснок огурцы хлеб и биток'
+# assert task2.status is False
+#
+# todo.add_task(task2)
+# assert len(todo.tasks) == 2
+#
+# # Создаем менеджер задач и показываем список задач
+# manager = TaskManager(todo)
+# assert isinstance(manager.task_list, TaskList)
+# print('-----Список дел-----')
+# manager.show_tasks()
+#
+#
+# # Отмечаем первую задачу выполненной и показываем список задач
+# manager.mark_done(task1)
+#
+# # Проверяем изменился ли статус 2мя способами
+# assert task1.status is True
+# assert manager.task_list.tasks[0].status is True
+#
+# print('-----Список дел-----')
+# manager.show_tasks()
+#
+# # Удаляем вторую задачу и показываем список задач
+# todo.remove_task(task2)
+#
+# assert len(todo.tasks) == 1
+# assert len(manager.task_list.tasks) == 1
+#
+# print('-----Список дел----3')
+# manager.show_tasks()
 '-------------------------------------------------------'
 # class Person:
 #
@@ -41,42 +148,40 @@ print('Hello World!')
 #         self.personal_data = Person(name=name, age=age)
 #         self.work = Company(company_name=company_name, location=location)
 
-ivan = Person('Ivan', 32)
-assert ivan.name == 'Ivan'
-assert ivan.age == 32
-ivan.display_person_info()
-
-zara = Company('Zara', 'Prague')
-assert zara.company_name == 'Zara'
-assert zara.location == 'Prague'
-zara.display_company_info()
-
-
-emp = Employee('Jessica', 28, 'Google', 'Atlanta')
-assert isinstance(emp.personal_data, Person)
-assert isinstance(emp.work, Company)
-
-assert emp.personal_data.name == 'Jessica'
-assert emp.personal_data.age == 28
-emp.personal_data.display_person_info()
-
-assert emp.work.company_name == 'Google'
-assert emp.work.location == 'Atlanta'
-emp.work.display_company_info()
-
-emp2 = Employee('Kolya', 11, 'Facebook', 'Seattle')
-assert isinstance(emp2.personal_data, Person)
-assert isinstance(emp2.work, Company)
-
-assert emp2.personal_data.name == 'Kolya'
-assert emp2.personal_data.age == 11
-emp2.personal_data.display_person_info()
-
-assert emp2.work.company_name == 'Facebook'
-assert emp2.work.location == 'Seattle'
-emp2.work.display_company_info()
-
-
+# ivan = Person('Ivan', 32)
+# assert ivan.name == 'Ivan'
+# assert ivan.age == 32
+# ivan.display_person_info()
+#
+# zara = Company('Zara', 'Prague')
+# assert zara.company_name == 'Zara'
+# assert zara.location == 'Prague'
+# zara.display_company_info()
+#
+#
+# emp = Employee('Jessica', 28, 'Google', 'Atlanta')
+# assert isinstance(emp.personal_data, Person)
+# assert isinstance(emp.work, Company)
+#
+# assert emp.personal_data.name == 'Jessica'
+# assert emp.personal_data.age == 28
+# emp.personal_data.display_person_info()
+#
+# assert emp.work.company_name == 'Google'
+# assert emp.work.location == 'Atlanta'
+# emp.work.display_company_info()
+#
+# emp2 = Employee('Kolya', 11, 'Facebook', 'Seattle')
+# assert isinstance(emp2.personal_data, Person)
+# assert isinstance(emp2.work, Company)
+#
+# assert emp2.personal_data.name == 'Kolya'
+# assert emp2.personal_data.age == 11
+# emp2.personal_data.display_person_info()
+#
+# assert emp2.work.company_name == 'Facebook'
+# assert emp2.work.location == 'Seattle'
+# emp2.work.display_company_info()
 '-------------------------------------------------------'
 # class CustomLabel:
 #
