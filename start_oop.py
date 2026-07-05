@@ -1,4 +1,6 @@
 from functools import wraps
+import time
+from datetime import datetime
 
 print('Hello World!')
 '--------------------'
@@ -11,10 +13,144 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+class UserMail:
+
+    def __init__(self, login, email):
+        self.login = login
+        self.__email = email
+
+    def get_email(self):
+        return self.__email
+
+    def set_email(self, value):
+        if value.count('@') == 1 and '.' in value.split('@')[1]:
+            self.__email = value
+        else:
+            print(f'ErrorMail:{value}')
+
+    email = property(fget=get_email, fset=set_email)
+
+jim = UserMail("aka47", 'hello@com.org')
+print(jim.login)
+print(jim._UserMail__email)
+print(isinstance(type(jim).email, property))
+print(jim.email)
+try:
+    jim.email = [1, 2, 3]
+except ValueError as e:
+    print(e)
+try:
+    jim.email = 'hello@@re.ee'
+except ValueError as e:
+    print(e)
+jim.email = 'hello@re.w3'
+print(jim.email)
 '-------------------------------------------------------'
+# class Employee:
+#
+#     def __init__(self, name, salary):
+#         self.__name = name
+#         self.__salary = salary
+#
+#     def __get_name(self):
+#         return self.__name
+#
+#     def __get_salary(self):
+#         return self.__salary
+#
+#     def __set_salary(self, value):
+#         if isinstance(value, (int, float)) and value >= 0:
+#             self.__salary = value
+#         else:
+#             print(f"ErrorValue:{value}")
+#
+#     title = property(fget=__get_name)
+#     reward = property(fget=__get_salary, fset=__set_salary)
+#
+# employee = Employee("John Doe", 50000)
+# assert employee.title == "John Doe"
+# assert employee._Employee__name == "John Doe"
+# assert isinstance(employee, Employee)
+# assert isinstance(type(employee).title, property), 'Вы не создали property title'
+# assert isinstance(type(employee).reward, property), 'Вы не создали property reward'
+#
+# assert employee.reward == 50000
+# employee.reward = -100  # ErrorValue:-100
+#
+# employee.reward = 1.5
+# assert employee.reward == 1.5
+#
+# employee.reward = 70000
+# assert employee.reward == 70000
+# employee.reward = 'hello'  # Печатает ErrorValue:hello
+# employee.reward = '777'  # Печатает ErrorValue:777
+# employee.reward = [1, 2]  # Печатает ErrorValue:[1, 2]
+# assert employee.reward == 70000
+# employee._Employee__set_salary(55000)
+# assert employee._Employee__get_salary() == 55000
 '-------------------------------------------------------'
+# class BankAccount:
+#
+#     def __init__(self, account_number, balance):
+#         self._account_number = account_number
+#         self._balance = balance
+#
+#     def get_account_number(self):
+#         return self._account_number
+#
+#     def get_balance(self):
+#         return self._balance
+#
+#     def set_balance(self, new_balance):
+#         self._balance = new_balance
+#
+# account = BankAccount("1234567890", 1000)
+# assert account._balance == 1000
+# assert account._account_number == "1234567890"
+# assert account.get_account_number() == "1234567890"
+# assert account.get_balance() == 1000
+# account.set_balance(1500)
+# assert account.get_balance() == 1500
+#
+# print('Good')
 '-------------------------------------------------------'
+# class Person:
+#     def __init__(self, name):
+#         self._name = name
+#
+#     def get_name(self):
+#         print(f"К атрибуту _name обращались в {datetime.now()}")
+#         return self._name
+#
+#     def set_name(self, new_name):
+#         print(f"Атрибут _name изменился в {datetime.now()}")
+#         self._name = new_name
+#
+#
+# bob = Person('bob')
+# print(bob.get_name())
+# time.sleep(3)
+# bob.set_name('Bill')
+# print(bob.get_name())
 '-------------------------------------------------------'
+# class Person:
+#     def __init__(self, name, age):
+#         self.set_name(name)
+#         self._age = age
+#
+#     def get_name(self):
+#         return self._name
+#
+#     def set_name(self, value):
+#         if isinstance(value, str) and len(value) > 0:
+#             self._name = value
+#         else:
+#             raise ValueError('Имя должно быть непустой строкой')
+# p = Person('Artem', 33)
+# try:
+#     p.set_name(100)
+# except ValueError as ex:
+#     print(ex)
 '-------------------------------------------------------'
 # class Employee:
 #
