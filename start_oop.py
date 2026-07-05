@@ -17,7 +17,7 @@ class UserMail:
 
     def __init__(self, login, email):
         self.login = login
-        self.__email = email
+        self.email = email
 
     def get_email(self):
         return self.__email
@@ -30,21 +30,26 @@ class UserMail:
 
     email = property(fget=get_email, fset=set_email)
 
-jim = UserMail("aka47", 'hello@com.org')
-print(jim.login)
-print(jim._UserMail__email)
-print(isinstance(type(jim).email, property))
-print(jim.email)
+# jim = UserMail("aka47", 'hello@com.org')
+# print(jim.login)
+# print(jim._UserMail__email)
+# print(isinstance(type(jim).email, property))
+# print(jim.email)
+# try:
+#     jim.email = [1, 2, 3]
+# except ValueError as e:
+#     print(e)
+# try:
+#     jim.email = 'hello@@re.ee'
+# except ValueError as e:
+#     print(e)
+# jim.email = 'hello@re.w3'
+# print(jim.email)
+
 try:
-    jim.email = [1, 2, 3]
+    UserMail('belosnezhka', {1, 2, 3})
 except ValueError as e:
     print(e)
-try:
-    jim.email = 'hello@@re.ee'
-except ValueError as e:
-    print(e)
-jim.email = 'hello@re.w3'
-print(jim.email)
 '-------------------------------------------------------'
 # class Employee:
 #
