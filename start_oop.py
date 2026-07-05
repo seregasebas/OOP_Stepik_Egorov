@@ -12,44 +12,112 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
-'-------------------------------------------------------'
-class UserMail:
-
-    def __init__(self, login, email):
-        self.login = login
-        self.email = email
-
-    def get_email(self):
-        return self.__email
-
-    def set_email(self, value):
-        if value.count('@') == 1 and '.' in value.split('@')[1]:
-            self.__email = value
-        else:
-            print(f'ErrorMail:{value}')
-
-    email = property(fget=get_email, fset=set_email)
+# class UserMail:
+#
+#     logins = []
+#
+#     def __init__(self, login, email):
+#         self.login = login
+#         self.email = email
+#
+#     def get_login(self):
+#         return self.__login
+#
+#     def set_login(self, value):
+#         if not isinstance(value, str):
+#             raise TypeError(f"{value} не является строкой")
+#         else:
+#             if value in UserMail.logins:
+#                 UserMail.logins.remove(value)
+#                 raise ValueError(f"Логин {value} уже имеется в системе")
+#             else:
+#                 self.__login = value
+#                 UserMail.logins.append(value)
+#
+#     def get_email(self):
+#         return self.__email
+#
+#     def set_email(self, value):
+#         if isinstance(value, str) and value.count('@') == 1 and '.' in value.split('@')[1]:
+#             self.__email = value
+#         else:
+#             raise ValueError(f'ErrorMail:{value}')
+#
+#     email = property(fget=get_email, fset=set_email)
+#     login = property(fget=get_login, fset=set_login)
 
 # jim = UserMail("aka47", 'hello@com.org')
-# print(jim.login)
-# print(jim._UserMail__email)
-# print(isinstance(type(jim).email, property))
-# print(jim.email)
+# print(isinstance(type(jim).login, property)) # Проверка на наличие свойства login
+# print(f'Jim login is {jim.login}')
 # try:
-#     jim.email = [1, 2, 3]
+#     bim = UserMail("aka47", 'world@com.org') # Попытка создать экземпляр с занятым логином
 # except ValueError as e:
 #     print(e)
+# jim.login = 'aka48'
+# print(f'Jim login is {jim.login}')
+# bim = UserMail("aka47", 'world@com.org')
+# print(f'Bim login is {bim.login}')
+#
+# for value in [True, [1, 2, 3], 5, {'a': 'b'}]:
+#     try:
+#         UserMail(value, 'world@com.org')
+#     except TypeError as e:
+#         print(e)
+'-------------------------------------------------------'
+# class UserMail:
+#
+#     def __init__(self, login, email):
+#         self.login = login
+#         self.email = email
+#
+#     def get_email(self):
+#         return self.__email
+#
+#     def set_email(self, value):
+#         if isinstance(value, str) and value.count('@') == 1 and '.' in value.split('@')[1]:
+#             self.__email = value
+#         else:
+#             print(f'ErrorMail:{value}')
+#
+#     email = property(fget=get_email, fset=set_email)
+#
+# # jim = UserMail("aka47", 'hello@com.org')
+# # print(jim.login)
+# # print(jim._UserMail__email)
+# # print(isinstance(type(jim).email, property))
+# # print(jim.email)
+# # try:
+# #     jim.email = [1, 2, 3]
+# # except ValueError as e:
+# #     print(e)
+# # try:
+# #     jim.email = 'hello@@re.ee'
+# # except ValueError as e:
+# #     print(e)
+# # jim.email = 'hello@re.w3'
+# # print(jim.email)
+#
+# # try:
+# #     UserMail('belosnezhka', {1, 2, 3})
+# # except ValueError as e:
+# #     print(e)
+#
+# k = UserMail('belosnezhka', 'prince@wait.you')
+# print(k.email)
+# print(k.login)
+# for value in [True, 'prince@still@.wait', 'prince@stillwait']:
+#     try:
+#         k.email = value
+#     except ValueError as e:
+#         print(e)
+#
+# k.email = 'prince@still.wait'
+# print(k.get_email())
 # try:
-#     jim.email = 'hello@@re.ee'
+#     k.email = 'pri.nce@stillwait'
 # except ValueError as e:
 #     print(e)
-# jim.email = 'hello@re.w3'
-# print(jim.email)
-
-try:
-    UserMail('belosnezhka', {1, 2, 3})
-except ValueError as e:
-    print(e)
+# print(k.email)
 '-------------------------------------------------------'
 # class Employee:
 #
