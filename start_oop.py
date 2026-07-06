@@ -24,6 +24,34 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Celsius:
+#
+#     def __init__(self, temp):
+#         self.temp = temp
+#
+#     def to_fahrenheit(self):
+#         return (self.temp * 9 / 5) + 32
+#
+#     @property
+#     def temperature(self):
+#         return self.temp
+#
+#     @temperature.setter
+#     def temperature(self, value):
+#         if -273.15 < value:
+#             self.temp = value
+#         else:
+#             raise ValueError
+#
+# celsius = Celsius(25)
+# assert celsius.temperature == 25
+# assert celsius.to_fahrenheit() == 77.0
+#
+# celsius.temperature = 30
+# assert celsius.temperature == 30
+# assert celsius.to_fahrenheit() == 86.0
+#
+# print('Good')
 '-------------------------------------------------------'
 # class Person:
 #     def __init__(self, new_name, new_age):
