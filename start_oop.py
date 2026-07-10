@@ -20,7 +20,159 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class TimeZone:
+#
+#     def __init__(self, name, offset_hours, offset_minutes):
+#         self.name = name
+#         self.offset_hours = offset_hours
+#         self.offset_minutes = offset_minutes
+#
+#     @property
+#     def name(self):
+#         return self._name
+#     @name.setter
+#     def name(self, value):
+#         if isinstance(value, str) and 0 < len(value.strip()) :
+#             self._name = value.strip()
+#         else:
+#             raise ValueError(f'Timezone bad name - {value}')
+#
+#     @property
+#     def offset_hours(self):
+#         return self._offset_hours
+#     @offset_hours.setter
+#     def offset_hours(self, value):
+#         if isinstance(value, int) and -12 <= value <= 14:
+#             self._offset_hours = value
+#         else:
+#             if not isinstance(value, int):
+#                 raise ValueError('Hour offset must be an integer.')
+#             else:
+#                 raise ValueError('Offset must be between -12:00 and +14:00.')
+#
+#     @property
+#     def offset_minutes(self):
+#         return self._offset_minutes
+#     @offset_minutes.setter
+#     def offset_minutes(self, value):
+#         if isinstance(value, int) and -59 <= value <= 59:
+#             self._offset_minutes = value
+#         else:
+#             if not isinstance(value, int):
+#                 raise ValueError('Minutes offset must be an integer.')
+#             else:
+#                 raise ValueError('Minutes offset must between -59 and 59.')
+#
+# try:
+#     TimeZone(' Abc ', -20.5, 34)
+# except ValueError as e:
+#     print(e)
+#
+# try:
+#     TimeZone(' Abc ', -15, 34)
+# except ValueError as e:
+#     print(e)
+#
+# try:
+#     TimeZone(' Abc ', 15, 34)
+# except ValueError as e:
+#     print(e)
+#
+# tz = TimeZone(' Abc ', 10, 34)
+# print(tz.name)
+# print(tz.offset_hours)
+# print(tz.offset_minutes)
+#
+# # # пустая строка не должна сохраняться
+# # for name in ['', None, '    ', 123, (1, 3), True]:
+# #     try:
+# #         TimeZone(name, 5, 34)
+# #     except ValueError as e:
+# #         print(e)
+#
+# # # Пример использования:
+# # tz = TimeZone("Москва", 3, 0)
+# # print(tz.name)          # "Москва"
+# #
+# # tz.name = "Лондон"      # ✅ работает
+# # print(tz.name)          # "Лондон"
+# #
+# # tz.name = ""           # ❌ ValueError: Timezone bad name -
+# # tz.name = "   "        # ❌ ValueError: Timezone bad name -
+# # tz.name = 123          # ❌ ValueError: Timezone bad name - 123
+#
+# # tz1 = TimeZone('ABC', -2, -15)
+# # print(tz1.name)
+# # print(tz1.offset_hours)
+# # print(tz1.offset_minutes)
+# #
+# # tz1.name = 'XYZ'
+# # tz1.offset_hours = 12
+# # tz1.offset_minutes = 0
+# #
+# # try:
+# #     tz1.offset_hours = 67
+# # except ValueError as e:
+# #     print(e)
+# # print(tz1.name, tz1.offset_hours, tz1.offset_minutes)
 '-------------------------------------------------------'
+# class Money:
+#
+#     def __init__(self, dollars, cents):
+#         self.total_cents = dollars * 100 + cents
+#
+#     @property
+#     def dollars(self):
+#         return self.total_cents // 100
+#
+#     @dollars.setter
+#     def dollars(self, dollar):
+#         if isinstance(dollar, int) and dollar >= 0:
+#             cent = self.total_cents % 100
+#             self.total_cents = dollar * 100 + cent
+#         else:
+#             print('Error dollars')
+#     @property
+#     def cents(self):
+#         return self.total_cents % 100
+#
+#     @cents.setter
+#     def cents(self, cent):
+#         if isinstance(cent, int) and 100 > cent >= 0:
+#             dollar = self.total_cents // 100
+#             self.total_cents = cent + dollar * 100
+#         else:
+#             print('Error cents')
+#
+#     def __str__(self):
+#         return f"Ваше состояние составляет {self.dollars} долларов {self.cents} центов"
+#
+# # Ниже располагаются проверки для класса Money
+#
+# bill = Money(101, 99)
+# assert isinstance(bill, Money)
+#
+# print(bill)  # Ваше состояние составляет 101 долларов 99 центов
+# print(bill.dollars, bill.cents)  # 101 99
+# bill.dollars = 666
+# print(bill)  # Ваше состояние составляет 666 долларов 99 центов
+# bill.cents = 12
+# print(bill)  # Ваше состояние составляет 666 долларов 12 центов
+# print(f'{bill.total_cents=}')
+# assert bill.total_cents == 66612
+# print(bill.__dict__.keys())
+# assert list(bill.__dict__.keys()) == ['total_cents']
+#
+# ken = Money(111, 90)
+# assert isinstance(ken, Money)
+# print(ken)
+# ken.dollars = 'hello'  # Error dollars
+# ken.dollars = 0
+# print(ken)
+# ken.cents = [1, 2, 3]  # Error cents
+# ken.cents = 100  # Error cents
+# ken.cents = 99
+# print(ken)
 '-------------------------------------------------------'
 # class Notebook:
 #
