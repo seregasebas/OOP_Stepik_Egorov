@@ -11,14 +11,289 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Date:
+#
+#     def __init__(self, day, month, year):
+#         self.year = year
+#         self.month = month
+#         self.day = day
+#
+#     @classmethod
+#     def from_str(cls, date_str):
+#         d, m, y = map(int, date_str.split('-'))
+#         return cls(d, m, y)
+#
+# day_1 = Date(20, 9, 1997)
+# print(day_1.day)
+# print(day_1.month)
+# print(day_1.year)
+#
+# day_2 = Date(1, 2, 2003)
+# print(day_2.day, day_2.month, day_2.year)
+#
+# day_1 = Date.from_str('12-4-2024')
+# day_2 = Date.from_str('06-09-2022')
+# print(day_1.day, day_1.month, day_1.year)
+# print(day_2.day, day_2.month, day_2.year)
 '-------------------------------------------------------'
+# class RobotVacuumCleaner:
+#     name = 'Henry'
+#     charge = 25
+#
+#     @classmethod
+#     def update_charge(cls, new_value):
+#         cls.charge = new_value
+#
+#     @staticmethod
+#     def hello(name):
+#         return f'Привет, {name}'
+#
+#     @property
+#     def data(self):
+#         return {
+#             'name': self.name,
+#             'charge': self.charge
+#         }
+#
+#     def make_clean(self):
+#         if self.charge < 30:
+#             return 'Кожаный, заряди меня! Я слаб'
+#         return 'Я вычищу твою берлогу!!!'
+
+# # код ниже не нужно удалять, в нем находятся проверки
+# print(RobotVacuumCleaner.hello('Господин'))
+# RobotVacuumCleaner.update_charge(50)
+#
+# robot = RobotVacuumCleaner()
+# print(robot.make_clean())
+# print(robot.data)
+#
+# RobotVacuumCleaner.update_charge(False)
+# print(robot.make_clean())
 '-------------------------------------------------------'
+# class TemperatureConverter:
+#
+#     @staticmethod
+#     def celsius_to_fahrenheit(celcius):
+#         return (celcius * 9 / 5) + 32
+#     @staticmethod
+#     def fahrenheit_to_celsius(fahrenheit):
+#         return (fahrenheit - 32) * 5 / 9
+#     @staticmethod
+#     def celsius_to_kelvin(celcius):
+#         return celcius + 273.15
+#     @staticmethod
+#     def kelvin_to_celsius(kelvin):
+#         return kelvin - 273.15
+#     @staticmethod
+#     def kelvin_to_fahrenheit(kelvin):
+#         return round((9 / 5 * (kelvin - 273.15)) + 32, 2)
+#     @staticmethod
+#     def fahrenheit_to_kelvin(fahrenheit):
+#         return round((5 / 9 * (fahrenheit - 32)) + 273.15, 2)
+#     @staticmethod
+#     def format(temp: float, f: str)-> str:
+#         return f"{temp}°{f}"
+
+# # Ниже код для проверки методов класса TemperatureConverter
+# assert TemperatureConverter.celsius_to_fahrenheit(0) == 32.0
+# assert TemperatureConverter.celsius_to_fahrenheit(10) == 50.0
+# assert TemperatureConverter.celsius_to_fahrenheit(15) == 59.0
+# assert TemperatureConverter.celsius_to_fahrenheit(20) == 68.0
+# assert TemperatureConverter.celsius_to_fahrenheit(25) == 77.0
+# assert TemperatureConverter.celsius_to_fahrenheit(30) == 86.0
+#
+# assert TemperatureConverter.fahrenheit_to_celsius(86) == 30.0
+# assert TemperatureConverter.fahrenheit_to_celsius(77) == 25.0
+# assert TemperatureConverter.fahrenheit_to_celsius(68) == 20.0
+# assert TemperatureConverter.fahrenheit_to_celsius(59) == 15.0
+# assert TemperatureConverter.fahrenheit_to_celsius(50) == 10.0
+# assert TemperatureConverter.fahrenheit_to_celsius(32) == 0
+#
+# converter = TemperatureConverter()
+# assert converter.celsius_to_kelvin(100) == 373.15
+# assert converter.kelvin_to_celsius(273.15) == 0
+# assert converter.fahrenheit_to_kelvin(50) == 283.15
+# assert converter.fahrenheit_to_kelvin(134.33) == 330.0
+# print(converter.kelvin_to_fahrenheit(54.0))
+# assert converter.kelvin_to_fahrenheit(54.0) == -362.47
+# assert converter.kelvin_to_fahrenheit(1653.0) == 2515.73
+# print(converter.format(1653.0, 'K'))
+# assert converter.format(1653.0, 'K') == '1653.0°K'
+# print(converter.format(45, 'F'))
+# assert converter.format(45, 'F') == '45°F'
+# assert converter.format(36.6, 'C') == '36.6°C'
+#
+# print('Good')
 '-------------------------------------------------------'
+# class Ingredient:
+#     def __init__(self, name, weight, price):
+#         self.name = name
+#         self.weight = weight
+#         self.price = price  # стоимость за 100гр
+#
+#     @property
+#     def cost(self):
+#         return self.weight * self.price/100
+#
+# class Pizza:
+#     def __init__(self, name, ingredients=None):
+#         self.name = name
+#         if ingredients is None:
+#             self.ingredients = []
+#         else:
+#             self.ingredients = ingredients
+#
+#     @property
+#     def cost(self):
+#         summa = 0
+#         for ingredient in self.ingredients:
+#             summa += ingredient.cost
+#         return summa + 100
+#
+# chicken = Ingredient('chicken', 200, 80)
+# mozzarella = Ingredient('mozzarella', 300, 110)
+# sauce_bbq = Ingredient('sauce bbq', 150, 70)
+# red_onion = Ingredient('red onion', 150, 50)
+#
+# print('Цена курицы', chicken.cost)
+# print('Цена моцарелы', mozzarella.cost)
+# print('Цена соуса', sauce_bbq.cost)
+# print('Цена красного лука', red_onion.cost)
+#
+# barbecue = Pizza('BBQ', [chicken, mozzarella, sauce_bbq, red_onion])
+# print('Стоимость пиццы BBQ', barbecue.cost)
 '-------------------------------------------------------'
+# class Colour:
+#
+#     def __init__(self, hex_string):
+#         self.hex_string = hex_string.strip('#')
+#
+#     @property
+#     def red(self):
+#         return int(self.hex_string[:2], 16)
+#
+#     @property
+#     def green(self):
+#         return int(self.hex_string[2:4], 16)
+#
+#     @property
+#     def blue(self):
+#         return int(self.hex_string[4:], 16)
+#
+# colour = Colour("#ff0000")
+# print(colour.red)
+# print(colour.green)
+# print(colour.blue)
 '-------------------------------------------------------'
+# class Password:
+#
+#     def __init__(self, password):
+#         self.password = password
+#
+#     @property
+#     def password(self):
+#         return self._password
+#
+#     @password.setter
+#     def password(self, password):
+#         self._password = password
+#
+#     @property
+#     def strength(self):
+#         if len(self._password) < 8:
+#             return "Weak"
+#         elif len(self._password) > 11:
+#             return "Strong"
+#         else:
+#             return "Medium"
+#
+# pass_1 = Password("Alligator34")
+# assert pass_1.password == "Alligator34"
+# print(pass_1.strength)
+# assert pass_1.strength == "Medium"
+# assert len(pass_1.__dict__) == 1, 'У ЭК должен храниться только один атрибут'
+#
+# pass_2 = Password("Alligator345678")
+# assert pass_2.password == "Alligator345678"
+# assert pass_2.strength == "Strong"
+# pass_1.password = "123"
+# assert pass_1.strength == "Weak"
+# assert len(pass_2.__dict__) == 1, 'У ЭК должен храниться только один атрибут'
+#
+# pass_3 = Password("345678")
+# assert pass_3.strength == "Weak"
+# print('Good')
+# assert len(pass_3.__dict__) == 1, 'У ЭК должен храниться только один атрибут'
 '-------------------------------------------------------'
+# class Date:
+#
+#     def __init__(self, day, month, year):
+#         self.year = year
+#         self.month = month
+#         self.day = day
+#
+#     @property
+#     def date(self):
+#         return f"{self.day:02}/{self.month:02}/{self.year:04}"
+#
+#     @property
+#     def usa_date(self):
+#         return f"{self.month:02}-{self.day:02}-{self.year:04}"
+#
+# d1 = Date(5, 10, 2001)
+# assert isinstance(d1, Date)
+# assert d1.date == '05/10/2001'
+# assert d1.usa_date == '10-05-2001'
+# assert isinstance(type(d1).date, property), 'Вы не создали property date'
+# print(d1.date, d1.usa_date)
+#
+# d2 = Date(15, 3, 999)
+# assert isinstance(d2, Date)
+# assert d2.date == '15/03/0999'
+# assert d2.usa_date == '03-15-0999'
+# assert isinstance(type(d2).date, property), 'Вы не создали property date'
+# print(d2.date, d2.usa_date)
+#
+# d3 = Date(3, 5, 3)
+# assert d3.date == '03/05/0003'
+# assert d3.usa_date == '05-03-0003'
+# print(d3.date, d3.usa_date)
+# print('Good')
 '-------------------------------------------------------'
+# class Rectangle:
+#
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     @property
+#     def area(self):
+#         return self.width * self.height
+#
+#     @property
+#     def perimeter(self):
+#         return 2 * self.width + 2 * self.height
+#
+# r1 = Rectangle(5, 10)
+# print(r1.area)
+# print(r1.perimeter)
+# print(isinstance(type(r1).area, property))
+# print(isinstance(type(r1).perimeter, property))
 '-------------------------------------------------------'
+# class Student:
+#     def __init__(self, name, marks=None):
+#         self.name = name
+#         self._course = 1
+#         self.__marks = marks or []
+#
+#     @property
+#     def average_marks(self):
+#         return sum(self.__marks) / len(self.__marks)
+#
+#
+# student = Student(name="Kevin")
+# print(student.average_marks)
 '-------------------------------------------------------'
 # class TimeZone:
 #
