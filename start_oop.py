@@ -1,6 +1,7 @@
 from functools import wraps
 import time
 from datetime import datetime
+import json
 
 print('Hello World!')
 '--------------------'
@@ -10,6 +11,102 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+# class AppConfig:
+#
+#     config_json = {}
+#
+#     @classmethod
+#     def load_config(cls, file):
+#         with open(file, 'r', encoding='utf-8') as f:
+#             cls.config_json = json.load(f)
+#
+#     @classmethod
+#     def get_config(cls, keys):
+#         if '.' in keys:
+#             keys = keys.split('.')
+#             value = cls.config_json
+#
+#             for key in keys:
+#                 if isinstance(value, dict) and key in value:
+#                     value = value[key]
+#                 else:
+#                     return None
+#             return value
+#         else:
+#             if keys in cls.config_json:
+#                 return cls.config_json[keys]
+#             else:
+#                 return None
+####Это мой код изначально написанный
+        #     if keys[0] in cls.config_json:
+        #         if keys[1] in cls.config_json[keys[0]]:
+        #             return cls.config_json[keys[0]][keys[1]]
+        # else:
+        #     if keys in cls.config_json:
+        #         return cls.config_json[keys]
+        #     else:
+        #         return None
+
+
+# # Загрузка конфигурации при запуске приложения
+# AppConfig.load_config('json/app_config.json')
+# # Получение значения конфигурации
+# assert AppConfig.get_config('database') == {
+#     'host': '127.0.0.1', 'port': 5432,
+#     'database_name': 'postgres_db',
+#     'user': 'owner',
+#     'password': 'ya_vorona_ya_vorona'}
+# assert AppConfig.get_config('database.user') == 'owner'
+# assert AppConfig.get_config('database.password') == 'ya_vorona_ya_vorona'
+# assert AppConfig.get_config('database.pass') is None
+# assert AppConfig.get_config('password.database') is None
+#
+# config = AppConfig()
+# assert config.get_config('max_connections') == 10
+# assert config.get_config('min_connections') is None
+#
+# conf = AppConfig()
+# assert conf.get_config('max_connections') == 10
+# assert conf.get_config('database.user') == 'owner'
+# assert conf.get_config('database.host') == '127.0.0.1'
+# assert conf.get_config('host') is None
+#
+# print('Good')
+'-------------------------------------------------------'
+# class Circle:
+#
+#     def __init__(self, radius):
+#         if not Circle.is_positive(radius):
+#             raise ValueError("Радиус должен быть положительным")
+#         self.radius = radius
+#
+#     @classmethod
+#     def from_diameter(cls, diametr):
+#         return cls(diametr/2)
+#
+#     @staticmethod
+#     def is_positive(nimber):
+#         return nimber > 0
+#
+#     @staticmethod
+#     def area(radius):
+#         return 3.14 * radius ** 2
+#
+# circle_1 = Circle.from_diameter(10)
+# assert isinstance(circle_1, Circle)
+# assert circle_1.radius == 5.0
+# print(f"circle_1.radius={circle_1.radius}")
+# assert Circle.is_positive(10)
+# assert not Circle.is_positive(-5)
+# assert Circle.area(1) == 3.14
+# assert Circle.area(2) == 12.56
+# print('Good')
 '-------------------------------------------------------'
 # class Date:
 #
