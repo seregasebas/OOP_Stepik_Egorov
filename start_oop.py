@@ -14,7 +14,63 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class BankAccount:
+#     bank_name = "Tinkoff Bank"
+#     address = "Москва, ул. 2-я Хуторская, д. 38А"
+#
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = balance
+#
+#     @classmethod
+#     def create_account(cls, bane, balance):
+#         return cls(bane, balance)
+#
+#     @classmethod
+#     def bank_info(cls):
+#         return f"{cls.bank_name} is located in {cls.address}"
+
+oleg = BankAccount.create_account("Олег Тинкофф", 1000)
+assert isinstance(oleg, BankAccount)
+assert oleg.name == 'Олег Тинкофф'
+assert oleg.balance == 1000
+assert BankAccount.bank_info() == 'Tinkoff Bank is located in Москва, ул. 2-я Хуторская, д. 38А'
+
+ivan = BankAccount.create_account("Ivan Reon", 50)
+assert isinstance(ivan, BankAccount)
+assert ivan.name == 'Ivan Reon'
+assert ivan.balance == 50
+print('Good')
 '-------------------------------------------------------'
+# class User:
+#
+#     def __init__(self, name, rule):
+#         self.name = name
+#         self.rule = rule
+#
+# class Access:
+#     __access_list = ['admin', 'developer']
+#
+#     @staticmethod
+#     def __check_access(role):
+#         return role in Access.__access_list
+#
+#     @staticmethod
+#     def get_access(user):
+#         if not isinstance(user, User):
+#             print('AccessTypeError')
+#         elif Access.__check_access(user.rule):
+#             print(f'User {user.name}: success')
+#         else:
+#             print('AccessDenied')
+#
+# user1 = User('batya99', 'admin')
+# Access.get_access(user1) # печатает "User batya99: success"
+#
+# zaya = User('milaya_zaya999', 'user')
+# Access.get_access(zaya) # печатает AccessDenied
+#
+# Access.get_access(5) # печатает AccessTypeError
 '-------------------------------------------------------'
 # class Robot:
 #     population = 0
