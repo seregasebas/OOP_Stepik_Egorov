@@ -1,3 +1,4 @@
+from collections import defaultdict
 from functools import wraps
 import time
 from datetime import datetime
@@ -19,6 +20,165 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Product:
+#
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+#
+# class User:
+#
+#     def __init__(self, login, balance = 0):
+#         self.login = login
+#         self.balance = balance
+#
+#     @property
+#     def balance(self):
+#         return self.__balance
+#     @balance.setter
+#     def balance(self, value):
+#         self.__balance = value
+#
+#     def __str__(self):
+#         return f'Пользователь {self.login}, баланс - {self.__balance}'
+#
+#     def deposit(self, amount):
+#         self.balance += amount
+#
+#     def is_money_enough(self, amount):
+#         return self.balance >=  amount
+#
+#     def payment(self, amount):
+#         if not self.is_money_enough(amount):
+#             print(f'Не хватает средств на балансе. Пополните счет')
+#             return False
+#         else:
+#             self.balance -= amount
+#             return True
+#
+# class Cart:
+#
+#     def __init__(self, user):
+#         self.user = user
+#         self.goods = defaultdict(int)
+#         self.__total = 0
+#
+#     @property
+#     def total(self):
+#         return self.__total
+#
+#     def add(self, product, quantity = 1):
+#         self.goods[product] = self.goods[product] + quantity
+#         self.__total += quantity * product.price
+#
+#     def remove(self, product, quantity = 1):
+#         if self.goods[product] >= quantity:
+#             self.goods[product] -= quantity
+#             self.__total -= quantity * product.price
+#         else:
+#             self.__total -= self.goods[product] * product.price
+#             self.goods[product] = 0
+#
+#     def order(self):
+#         if not self.user.payment(self.__total):
+#             print(f'Проблема с оплатой')
+#         else:
+#             print(f'Заказ оплачен')
+#
+#     def print_check(self):
+#         print(f'---Your check---')
+#         for elem in sorted(self.goods, key=lambda x: x.name):
+#             if self.goods[elem] > 0:
+#                 print(f'{elem.name} {elem.price} {self.goods[elem]} {self.goods[elem] * elem.price}')
+#         print(f'---Total: {self.__total}---')
+#
+# billy = User('billy@rambler.ru')
+#
+# lemon = Product('lemon', 20)
+# carrot = Product('carrot', 30)
+# zara = Product('zara', 1530)
+#
+# cart_billy = Cart(billy)
+# assert cart_billy.goods == {}, 'Создайте пустой словарь в goods'
+# cart_billy.add(lemon, 5)
+# cart_billy.add(zara, 5)
+# cart_billy.add(carrot)
+# assert cart_billy.total == 7780, 'Должен пересчитываться при добавлении.__total'
+# assert cart_billy.goods[lemon] == 5, 'Должно быть пять лимонов хранится в goods'
+#
+# cart_billy.remove(lemon, 100)
+# assert cart_billy.goods.get(lemon, 0) == 0, 'Нельзя удалить из корзины больше чем было'
+# cart_billy.print_check()
+# cart_billy.add(lemon, 3)
+# cart_billy.print_check()
+# cart_billy.remove(lemon, 6)
+# cart_billy.print_check()
+# print(cart_billy.total)
+# cart_billy.add(lemon, 5)
+# cart_billy.print_check()
+# cart_billy.order()
+# cart_billy.user.deposit(8150)
+# cart_billy.order()
+# print(cart_billy.user.balance)
+#
+# # billy = User('billy@rambler.ru')
+# #
+# # lemon = Product('lemon', 20)
+# # carrot = Product('carrot', 30)
+# #
+# # cart_billy = Cart(billy)
+# # print(cart_billy.user) # Пользователь billy@rambler.ru, баланс - 0
+# # cart_billy.add(lemon, 2)
+# # cart_billy.add(carrot)
+# # cart_billy.print_check()
+# # ''' Печатает текст ниже
+# # ---Your check---
+# # carrot 30 1 30
+# # lemon 20 2 40
+# # ---Total: 70---'''
+# # cart_billy.add(lemon, 3)
+# # cart_billy.print_check()
+# # ''' Печатает текст ниже
+# # ---Your check---
+# # carrot 30 1 30
+# # lemon 20 5 100
+# # ---Total: 130---'''
+# # cart_billy.remove(lemon, 6)
+# # cart_billy.print_check()
+# # ''' Печатает текст ниже
+# # ---Your check---
+# # carrot 30 1 30
+# # ---Total: 30---'''
+# # print(cart_billy.total) # 30
+# # cart_billy.add(lemon, 5)
+# # cart_billy.print_check()
+# # ''' Печатает текст ниже
+# # ---Your check---
+# # carrot 30 1 30
+# # lemon 20 5 100
+# # ---Total: 130---'''
+# # print('-------------------------------------------')
+# # cart_billy.order()
+# # ''' Печатает текст ниже
+# # Не хватает средств на балансе. Пополните счет
+# # Проблема с оплатой'''
+# # cart_billy.user.deposit(150)
+# # cart_billy.order() # Заказ оплачен
+# # print(cart_billy.user.balance) # 20
+# #
+# # # billy = User('billy@rambler.ru')
+# # # print(billy)
+# # # print(billy.is_money_enough(350))
+# # # billy.deposit(100)
+# # # billy.deposit(300)
+# # # print(billy.is_money_enough(350))
+# # # print(billy)
+# # # billy.payment(500)
+# # # billy.payment(150)
+# # # print(billy)
+# # #
+# # # # carrot = Product('carrot', 30)
+# # # # print(carrot.name, carrot.price)
 '-------------------------------------------------------'
 # class File:
 #
