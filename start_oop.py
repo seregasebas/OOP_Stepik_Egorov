@@ -18,7 +18,59 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Vector:
+#
+#     def __init__(self, *args):
+#         self.args = args
+#         self.spisok = []
+#         for arg in args:
+#             if isinstance(arg, int) and not isinstance(arg, bool):
+#                 self.spisok.append(arg)
+#
+#     def __str__(self):
+#         if len(self.spisok) == 0:
+#             return f"Пустой вектор"
+#         else:
+#             return f"Вектор{tuple(sorted(self.spisok))}"
+#
+# v5 = Vector(1, True, False, 5, 2, True, 4)
+# print(str(v5))
+#
+# # v1 = Vector(1, 2, 3)
+# # print(str(v1))
+# # print(isinstance(v1, Vector))
+# #
+# # v2 = Vector([4, 5], 'hello', 3, -1.5, 1, 2)
+# # print(str(v2))
+# #
+# # v3 = Vector()
+# # print(v3)
+# #
+# # v4 = Vector([4, 5], 'hello')
+# # print(str(v4))
 '-------------------------------------------------------'
+# class Person:
+#
+#     def __init__(self, name, surname, gender='male'):
+#         self.name = name
+#         self.surname = surname
+#         if gender == 'female' or gender == 'male':
+#             self.gender = gender
+#         else:
+#             print(f'Не знаю, что вы имели в виду? Пусть это будет мальчик!')
+#             self.gender = 'male'
+#
+#     def __str__(self):
+#         if self.gender == 'male':
+#             return f'Гражданин {self.surname} {self.name}'
+#         else:
+#             return f'Гражданка {self.surname} {self.name}'
+#
+# p = Person('Chuck', 'Norris')
+# print(p.name)
+# print(p.surname)
+# print(p.gender)
+# print(p)
 '-------------------------------------------------------'
 # class Product:
 #
