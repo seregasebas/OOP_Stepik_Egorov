@@ -23,7 +23,84 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Order:
+#
+#     def __init__(self, cart, customer):
+#         self.cart = cart
+#         self.customer = customer
+#
+#     def __add__(self, other):
+#         return Order(self.cart + [other], self.customer)
+#
+#     def __radd__(self, other):
+#         return Order([other] + self.cart, self.customer)
+#
+#     def __sub__(self, other):
+#         if other in self.cart:
+#             del self.cart[self.cart.index(other)]
+#             return Order(self.cart, self.customer)
+#         else:
+#             return Order(self.cart, self.customer)
+#
+#     def __rsub__(self, other):
+#         return self.__sub__(other)
+#
+#
+# order = Order(['banana', 'apple'], 'Гена Букин')
+#
+# order_2 = order + 'orange'
+# assert order.cart == ['banana', 'apple']
+# assert order.customer == 'Гена Букин'
+# assert order_2.cart == ['banana', 'apple', 'orange']
+#
+# order = 'mango' + order
+# assert order.cart == ['mango', 'banana', 'apple']
+# order = 'ice cream' + order
+# assert order.cart == ['ice cream', 'mango', 'banana', 'apple']
+#
+# print(f'{order.cart=}')
+# order = order - 'banana'
+# print(order.cart)
+# assert order.cart == ['ice cream', 'mango', 'apple']
+#
+# order3 = order - 'banana'
+# assert order3.cart == ['ice cream', 'mango', 'apple']
+#
+# order = order - 'mango'
+# assert order.cart == ['ice cream', 'apple']
+# order = 'lime' - order
+# assert order.cart == ['ice cream', 'apple']
+# print('Good')
 '-------------------------------------------------------'
+# class Rectangle:
+#
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     def __add__(self, other):
+#         if isinstance(other, Rectangle):
+#             return Rectangle(self.width + other.width, self.height + other.height)
+#         return None
+#
+#     def __str__(self):
+#         return f"Rectangle({self.width}x{self.height})"
+#
+# r1 = Rectangle(5, 10)
+# assert r1.width == 5
+# assert r1.height == 10
+# print(r1)
+#
+# r2 = Rectangle(20, 5)
+# assert r2.width == 20
+# assert r2.height == 5
+# print(r2)
+#
+# r3 = r2 + r1
+# assert isinstance(r3, Rectangle)
+# assert r3.width == 25
+# assert r3.height == 15
+# print(r3)
 '-------------------------------------------------------'
 # class Hero:
 #
