@@ -20,7 +20,130 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class ChessPlayer:
+#
+#     def __init__(self, name, surname, rating):
+#         self.name = name
+#         self.surname = surname
+#         self.rating = rating
+#
+#     def _get_raitng(self, other):
+#         if isinstance(other, ChessPlayer):
+#             return other.rating
+#         elif isinstance(other, int):
+#             return other
+#         else:
+#             return f'Невозможно выполнить сравнение'
+#
+#     def __eq__(self, other):
+#         if self._get_raitng(other) =='Невозможно выполнить сравнение':
+#             return self._get_raitng(other)
+#         return self.rating == self._get_raitng(other)
+#
+#     def __gt__(self, other):
+#         if self._get_raitng(other) =='Невозможно выполнить сравнение':
+#             return self._get_raitng(other)
+#         return self.rating > self._get_raitng(other)
+#
+#     def __lt__(self, other):
+#         if self._get_raitng(other) =='Невозможно выполнить сравнение':
+#             return self._get_raitng(other)
+#         return self.rating < self._get_raitng(other)
+#
+# magnus = ChessPlayer('Carlsen', 'Magnus', 2847)
+# assert magnus.name == 'Carlsen'
+# assert magnus.surname == 'Magnus'
+# assert magnus.rating == 2847
+# ian = ChessPlayer('Ian', 'Nepomniachtchi', 2789)
+# assert not magnus == 4000
+# assert ian == 2789
+# assert not magnus == ian
+# assert magnus > ian
+# assert not magnus < ian
+# assert (magnus < [1, 2]) == 'Невозможно выполнить сравнение'
+#
+# v1 = ChessPlayer('Гарри ', 'Каспаров', 10)
+# v2 = ChessPlayer('Бобби', 'Фишер', 20)
+# v3 = ChessPlayer('Bot', 'Bot', 20)
+#
+# assert isinstance(v1, ChessPlayer)
+# assert isinstance(v2, ChessPlayer)
+# assert v2.__dict__ == {'name': 'Бобби', 'surname': 'Фишер', 'rating': 20}
+# assert v1.__dict__ == {'name': 'Гарри ', 'surname': 'Каспаров', 'rating': 10}
+# assert v1 > 5
+# assert not v1 > 10
+# assert not v1 > 11
+# assert not v1 < 5
+# assert not v1 < 10
+# assert v1 < 11
+# assert not v1 == 5
+# assert v1 == 10
+# assert not v1 == 11
+# assert not v1 > v2
+# assert not v1 == v2
+# assert v3 == v2
+# assert not v3 != v2
+# assert v1 < v2
+# assert (v1 > 'fdsfd') == 'Невозможно выполнить сравнение'
+# assert (v1 < 'fdsfd') == 'Невозможно выполнить сравнение'
+# assert (v1 == 'fdsfd') == 'Невозможно выполнить сравнение'
+# assert (v1 == [1, 2]) == 'Невозможно выполнить сравнение'
+# assert (v1 < [1, 2]) == 'Невозможно выполнить сравнение'
+# print('Good')
 '-------------------------------------------------------'
+# class Fruit:
+#
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+#
+#     def _get_price(self, other):
+#         if isinstance(other, Fruit):
+#             return other.price
+#         return other
+#
+#     def __eq__(self, other):
+#         return self.price == self._get_price(other)
+#
+#     def __lt__(self, other):
+#         return self.price < self._get_price(other)
+#
+#     def __le__(self, other):
+#         return self.price <= self._get_price(other)
+#
+#     def __gt__(self, other):
+#         return self.price > self._get_price(other)
+#
+#     def __ge__(self, other):
+#         return self.price >= self._get_price(other)
+
+# apple = Fruit("Apple", 0.5)
+# orange = Fruit("Orange", 1)
+# banana = Fruit("Banana", 1.6)
+# lime = Fruit("Lime", 1.0)
+#
+# print(banana > 1.2)
+# assert (banana > 1.2) is True
+# assert (banana >= 1.2) is True
+# assert (banana == 1.2) is False
+# assert (banana != 1.2) is True
+# assert (banana < 1.2) is False
+# assert (banana <= 1.2) is False
+#
+# assert (apple > orange) is False
+# assert (apple >= orange) is False
+# assert (apple == orange) is False
+# assert (apple != orange) is True
+# assert (apple < orange) is True
+# assert (apple <= orange) is True
+#
+# assert (orange == lime) is True
+# assert (orange != lime) is False
+# assert (orange > lime) is False
+# assert (orange < lime) is False
+# assert (orange <= lime) is True
+# assert (orange >= lime) is True
+# print('Good')
 '-------------------------------------------------------'
 # class Vector:
 #
