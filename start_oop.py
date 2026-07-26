@@ -18,7 +18,68 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Quadrilateral:
+#
+#     def __init__(self, a, b=None):
+#         self.a = a
+#         if b is not None:
+#             self.b = b
+#         else:
+#             self.b = a
+#
+#     def __bool__(self):
+#         return self.a == self.b
+#
+#     def __str__(self):
+#         if self:
+#             return f'Квадрат размером {self.a}х{self.b}'
+#         return f'Прямоугольник размером {self.a}х{self.b}'
+#
+# q1 = Quadrilateral(10)
+# print(q1)
+# print(bool(q1))
+# print(isinstance(q1, Quadrilateral))
+#
+# q2 = Quadrilateral(3, 5)
+# print(q2)
+# print(bool(q2))
+#
+# q3 = Quadrilateral(4, 7)
+# print(q3)
+# print(bool(q3))
 '-------------------------------------------------------'
+# class City:
+#
+#     def __init__(self, name: str):
+#         self.name = name.title()
+#
+#     def __str__(self):
+#         return self.name
+#
+#     def __bool__(self):
+#         return self.name[-1] not in 'aeiou'
+#
+#
+# p1 = City('new york')
+# print(p1.name)
+# assert p1.name == "New York"
+# assert p1.__str__() == "New York"
+# assert isinstance(p1, City)
+# print(p1)
+# assert bool(p1)
+#
+# p2 = City('SaN frANCISco')
+# assert isinstance(p2, City)
+# assert p2.name == "San Francisco"
+# print(p2)
+# assert not bool(p2)
+#
+# p3 = City('NIZHNY NoVGORod')
+# assert p3.name == "Nizhny Novgorod"
+# print(p3)
+# assert bool(p3)
+# assert isinstance(p3, City)
+# print('Good')
 '-------------------------------------------------------'
 # @total_ordering
 # class Rectangle:
