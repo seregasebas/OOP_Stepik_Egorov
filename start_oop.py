@@ -4,6 +4,7 @@
 # from datetime import datetime
 # from string import ascii_letters
 # from functools import total_ordering
+import time
 print('Hello World!')
 '--------------------'
 '-------------------------------------------------------'
@@ -14,8 +15,68 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Timer:
+#
+#     def __init__(self, func):
+#         self.func = func
+#
+#     def __call__(self):
+#         self.start = time.time()
+#         self.func()
+#         self.end = time.time()
+#         return self.end - self.start
+#
+# @Timer
+# def calculate():
+#     for i in range(10000000):
+#         2**100
+#
+# print(calculate())
 '-------------------------------------------------------'
+# class Addition:
+#
+#     def __call__(self, *args):
+#         self.summa = 0
+#         for arg in args:
+#             if isinstance(arg, (int, float)):
+#                 self.summa += arg
+#         return f"Сумма переданных значений = {self.summa}"
+#
+# add = Addition()
+# assert add(10, 20) == "Сумма переданных значений = 30"
+# print(add(1, 2, 3.4))
+# assert add(1, 2, 3.4) == "Сумма переданных значений = 6.4"
+# assert add(1, 2, 'hello', [1, 2], 3) == "Сумма переданных значений = 6"
+#
+# add2 = Addition()
+# assert add2(10, 20, 3, 3, 4, 3, 2, 43, 43) == "Сумма переданных значений = 131"
+# assert add2() == "Сумма переданных значений = 0"
+# assert add2('hello') == "Сумма переданных значений = 0"
+#
+# print('Good')
 '-------------------------------------------------------'
+# class QuadraticFunction:
+#
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def __call__(self, x):
+#         return self.a * x ** 2 + self.b * x + self.c
+#
+# f = QuadraticFunction(2, 5, 7)
+# assert f(1) == 14
+# assert f(-3) == 10
+# assert f(2) == 25
+# assert f(5) == 82
+#
+# f_2 = QuadraticFunction(-1, 2, 4)
+# assert f_2(5) == -11
+# assert f_2(2) == 4
+# assert f_2(-3) == -11
+# assert f_2(1) == 5
+# print('Good')
 '-------------------------------------------------------'
 # class Adder:
 #     def __init__(self, x):
@@ -28,7 +89,6 @@ print('Hello World!')
 # b = Adder(20)
 # c = a(5) + b(5)
 # print(c)
-'-------------------------------------------------------'
 '-------------------------------------------------------'
 # class City:
 #
