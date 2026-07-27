@@ -18,35 +18,6 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
-# class Quadrilateral:
-#
-#     def __init__(self, a, b=None):
-#         self.a = a
-#         if b is not None:
-#             self.b = b
-#         else:
-#             self.b = a
-#
-#     def __bool__(self):
-#         return self.a == self.b
-#
-#     def __str__(self):
-#         if self:
-#             return f'Квадрат размером {self.a}х{self.b}'
-#         return f'Прямоугольник размером {self.a}х{self.b}'
-#
-# q1 = Quadrilateral(10)
-# print(q1)
-# print(bool(q1))
-# print(isinstance(q1, Quadrilateral))
-#
-# q2 = Quadrilateral(3, 5)
-# print(q2)
-# print(bool(q2))
-#
-# q3 = Quadrilateral(4, 7)
-# print(q3)
-# print(bool(q3))
 '-------------------------------------------------------'
 # class City:
 #
