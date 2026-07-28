@@ -3,8 +3,8 @@
 # import time
 # from datetime import datetime
 # from string import ascii_letters
-# from functools import total_ordering
-import time
+from functools import total_ordering
+# import time
 print('Hello World!')
 '--------------------'
 '-------------------------------------------------------'
@@ -14,6 +14,102 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+# @total_ordering
+# class BankAccount:
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = balance
+#
+#     def __str__(self):
+#         return self.name
+#
+#     def __lt__(self, other):
+#         if isinstance(other, BankAccount):
+#             return self.balance < other.balance
+#         elif isinstance(other, int):
+#             return self.balance < other
+#
+#     def __gt__(self, other):
+#         if isinstance(other, BankAccount):
+#             return self.balance > other.balance
+#         elif isinstance(other, int):
+#             return self.balance > other
+#
+# values = [
+#     BankAccount('Petrovich', 5),
+#     BankAccount('Ivan', 10),
+#     BankAccount('Andrey', 3),
+#     BankAccount('Lena', 15),
+#     BankAccount('Petr', 150)
+# ]
+# values.sort(reverse=True)
+# print(*values)
+#
+#
+# values = [BankAccount('Petrovich', 400), 500, BankAccount('Andrey', 200), 100, BankAccount('Zina', 150)]
+# values.sort()
+# print(*values)
+'-------------------------------------------------------'
+# class DateUSA:
+#
+#     def __init__(self, day, month, year):
+#         self.day = day
+#         self.month = month
+#         self.year = year
+#
+#     def format(self):
+#         return f'{self.month:02d}/{self.day:02d}/{self.year:04d}'
+#
+#     def isoformat(self):
+#         return f'{self.year:04d}-{self.month:02d}-{self.day:02d}'
+#
+# class DateEurope:
+#
+#     def __init__(self, day, month, year):
+#         self.day = day
+#         self.month = month
+#         self.year = year
+#
+#     def format(self):
+#         return f'{self.day:02d}/{self.month:02d}/{self.year:04d}'
+#
+#     def isoformat(self):
+#         return f'{self.year:04d}-{self.month:02d}-{self.day:02d}'
+#
+# d = DateEurope(5, 12, 2001)
+# print(d.format())
+# print(d.isoformat())
+'-------------------------------------------------------'
+# class UnitedKingdom:
+#
+#     @staticmethod
+#     def get_capital():
+#         print(f'London is the capital of Great Britain.')
+#     @staticmethod
+#     def get_language():
+#         print(f'English is the primary language of Great Britain.')
+#
+# class Spain:
+#
+#     @staticmethod
+#     def get_capital():
+#         print(f'Madrid is the capital of Spain.')
+#
+#     @staticmethod
+#     def get_language():
+#         print(f'Spanish is the primary language of Spain.')
 '-------------------------------------------------------'
 # class Timer:
 #
