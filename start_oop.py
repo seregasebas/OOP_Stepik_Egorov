@@ -3,7 +3,7 @@
 # import time
 # from datetime import datetime
 # from string import ascii_letters
-from functools import total_ordering
+# from functools import total_ordering
 # import time
 print('Hello World!')
 '--------------------'
@@ -25,6 +25,44 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class BankAccount:
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.balance = balance
+#
+#     def __str__(self):
+#         return self.name
+#
+#     def __radd__(self, other):
+#         if isinstance(other, BankAccount):
+#             return self.balance + other.balance
+#         elif isinstance(other, (int, float)):
+#             return self.balance + other
+#         elif isinstance(other, Numbers):
+#             return self.balance + sum(other._values)
+#
+# class Numbers:
+#     def __init__(self, values: list):
+#         self._values = values
+#
+#     def __radd__(self, other):
+#         if isinstance(other, Numbers):
+#             return sum(self._values) + sum(other._values)
+#         elif isinstance(other, (int, float)):
+#             return sum(self._values) + other
+#         if isinstance(other, BankAccount):
+#             return sum(self._values) + other.balance
+#
+# lst = [
+#     BankAccount('Jack', 1000),
+#     Numbers([1, 2, 3, 4, 5]),
+#     BankAccount('Ivan', 30),
+#     7.5,
+#     Numbers([10, 20, 30, 40, 50]),
+#     BankAccount('Frank', 2000),
+#     10
+# ]
+# print(sum(lst))
 '-------------------------------------------------------'
 # @total_ordering
 # class BankAccount:
