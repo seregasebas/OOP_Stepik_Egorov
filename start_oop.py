@@ -25,44 +25,188 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
-# class BankAccount:
-#     def __init__(self, name, balance):
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+'-------------------------------------------------------'
+# class Building:
+#
+#     def __init__(self, floors:int):
+#         self.floors = {key:None for key in range(floors)}
+#
+#     def __getitem__(self,floor):
+#         return self.floors[floor]
+#
+#     def __setitem__(self, floor, name):
+#         self.floors[floor]=name
+#
+#     def __delitem__(self, floor):
+#         self.floors[floor] = None
+#
+# iron_building = Building(22)  # Создаем здание с 22 этажами
+# iron_building[0] = 'Reception'
+# iron_building[1] = 'Oscorp Industries'
+# iron_building[2] = 'Stark Industries'
+# print(iron_building[2])
+# del iron_building[2]
+# print(iron_building[2])
+'-------------------------------------------------------'
+# class Vector:
+#     def __init__(self, *args):
+#         self.values = list(args)
+#
+#     def __repr__(self):
+#         return f'Vector({", ".join([str(value) for value in self.values])})'
+#
+#     def __getitem__(self, item):
+#         if 0 <= item < len(self.values):
+#             return self.values[item]
+#         else:
+#             raise IndexError(f"Индекс {item} находится за пределами вектора")
+#
+#     def __delitem__(self, value):
+#         if value in self.values:
+#             for val in range(self.values.count(value)):
+#                 ind = self.values.index(value)
+#                 del self.values[ind]
+#         else:
+#             raise ValueError(f'Значение {value} отсутствует в векторе')
+#
+# v1 = Vector(5, 6, 7, 8, 9, 5)
+# del v1[6]
+# del v1[9]
+# print(v1)
+# del v1[5]
+# print(v1)
+#
+# v1 = Vector(5, 5, 5, 4, 4, 3)
+# print(v1)
+# del v1[4]
+# print(v1)
+# del v1[5]
+# print(v1)
+# try:
+#     del v1[10]
+# except ValueError as e:
+#     print(e)
+'-------------------------------------------------------'
+# class Vector:
+#     def __init__(self, *args):
+#         self.values = list(args)
+#
+#     def __repr__(self):
+#         return f'Vector({", ".join([str(value) for value in self.values])})'
+#
+#     def __getitem__(self, item):
+#         if isinstance(item, str):
+#             item = len(item)
+#             # print(f'len item = {item}')
+#         if 0 < item <= len(self.values):
+#             return self.values[item-1]
+#         else:
+#             raise IndexError(f"Индекс {item} находится за пределами вектора")
+#
+# v = Vector(5, 7, 8, 9, 2, 3)
+# print(v['q'])  # 5
+# print(v['_+'])  # 7
+# print(v['567'])  # 8
+# print(v['!@#$'])  # 9
+# print(v['abba'])  # 9
+# print(v['qwerty'])  # 3
+# try:
+#     print(v['abracadabra'])
+# except IndexError as e:
+#     print(e)
+#
+# # v = Vector(3, 655, 323, 672, 11, 6)
+# # # print(v)
+# # # print(f'{v[1]=}')
+# # print(v[1])  # 3
+# # print(v[2])  # 655
+# # print(v['cat'])  # 323
+# # print(v['park'])  # 672
+# # try:
+# #     print(v[''])
+# # except IndexError as e:
+# #     print(e)
+'-------------------------------------------------------'
+# class Vector:
+#     def __init__(self, *args):
+#         self.values = list(args)
+#
+#     def __repr__(self):
+#         # print(f'Vector({type(", ".join([str(value) for value in self.values]))})')
+#         return f'Vector({", ".join([str(value) for value in self.values])})'
+#
+#     def __getitem__(self, value):
+#         if value in self.values:
+#             if self.values.count(value) > 1:
+#                 res = []
+#                 for ind, val in enumerate(self.values):
+#                     if val == value:
+#                         res.append(ind + 1)
+#                 return res
+#             else:
+#                 return self.values.index(value) + 1
+#         else:
+#             raise ValueError(f"В векторе отсутствует значение {value}")
+#
+# v1 = Vector(3, 655, 323, 672, 11, 6)
+# # print(v1)
+# print(v1[655])  # 2
+# print(v1[672])  # 4
+# print(v1[3])  # 1
+# try:
+#     print(v1[10])
+# except ValueError as e:
+#     print(e)
+#
+# v1 = Vector(5, 5, 5, 4, 4, 3)
+# print(v1[4])  # [4, 5]
+# print(v1[5])  # [1, 2, 3]
+# print(v1[3])  # 6
+# try:
+#     print(v1[2])
+# except ValueError as e:
+#     print(e)
+'-------------------------------------------------------'
+# class Vector:
+#     def __init__(self, *args):
+#         self.values = list(args)
+#
+#     def __repr__(self):
+#         return f'Vector({", ".join([str(value) for value in self.values])})'
+#
+#     def __getitem__(self, item):
+#         if 1 <= item <= len(self.values):
+#             return self.values[item-1]
+#         else:
+#             raise IndexError(f"Индекс {item} находится за пределами вектора")
+#
+# v2 = Vector(10, 9, 8, 7)
+# print(v2[4])
+# print(v2[3])
+# print(v2[2])
+# print(v2[1])
+# try:
+#     print(v2[0])
+# except IndexError as e:
+#     print(e)
+'-------------------------------------------------------'
+# class Student:
+#     def __init__(self, name, marks=None):
 #         self.name = name
-#         self.balance = balance
+#         self._course = 1
+#         self._marks = marks or []
 #
-#     def __str__(self):
-#         return self.name
+#     def __getitem__(self, item):
+#         print(self.__dict__)
+#         return self.__dict__[item]
 #
-#     def __radd__(self, other):
-#         if isinstance(other, BankAccount):
-#             return self.balance + other.balance
-#         elif isinstance(other, (int, float)):
-#             return self.balance + other
-#         elif isinstance(other, Numbers):
-#             return self.balance + sum(other._values)
 #
-# class Numbers:
-#     def __init__(self, values: list):
-#         self._values = values
-#
-#     def __radd__(self, other):
-#         if isinstance(other, Numbers):
-#             return sum(self._values) + sum(other._values)
-#         elif isinstance(other, (int, float)):
-#             return sum(self._values) + other
-#         if isinstance(other, BankAccount):
-#             return sum(self._values) + other.balance
-#
-# lst = [
-#     BankAccount('Jack', 1000),
-#     Numbers([1, 2, 3, 4, 5]),
-#     BankAccount('Ivan', 30),
-#     7.5,
-#     Numbers([10, 20, 30, 40, 50]),
-#     BankAccount('Frank', 2000),
-#     10
-# ]
-# print(sum(lst))
+# student = Student(name="Kevin", marks=[5, 4, 3])
+# print(student['name'])
 '-------------------------------------------------------'
 # @total_ordering
 # class BankAccount:
