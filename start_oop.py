@@ -26,7 +26,87 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class AttributeChecker:
+#
+#     def __contains__(self, attribute):
+#         return attribute in self.__dict__
+#
+#
+# # Тест 1: Проверка наличия отсутствующего атрибута
+# check = AttributeChecker()
+# assert "name" not in check
+# assert "age" not in check
+# setattr(check, 'name', 'Russell')
+# check.age = 10
+#
+# # Тест 2: Проверка добавления атрибутов
+# assert "name" in check
+# assert "age" in check
+#
+# # Тест 3: Проверка атрибутов другого ЭК
+# check_2 = AttributeChecker()
+# assert "name" not in check_2
+# assert "age" not in check_2
+#
+#
+# # Тест 4: Проверка наличия атрибутов после удаления
+# delattr(check, "name")
+# assert "name" not in check
+# assert "age" in check
+#
+# print("Good")
 '-------------------------------------------------------'
+# class SparseArray:
+#
+#     def __init__(self, *args):
+#         self.array = [arg for arg in args]
+#
+#     def __getitem__(self, index):
+#         if index > len(self.array):
+#             self.array.extend([None] * (index - len(self.array) + 1))
+#         return self.array[index]
+#
+#     def __setitem__(self, index, value):
+#         if index > len(self.array):
+#             self.array.extend([None] * (index - len(self.array) + 1))
+#         self.array[index] = value
+#
+#     def __delitem__(self, index):
+#         if index > len(self.array):
+#             pass
+#         else:
+#             self.array[index] = None
+#
+#     def __len__(self):
+#         return len(self.array)
+#
+#     @property
+#     def values(self):
+#         return tuple(self.array)
+#
+# # array = SparseArray(1, 2, 3)
+# # print(array.values)
+# # print(array[7])
+# # print(array.values)
+# # array[6] = 100
+# # print(array.values)
+# # array[10] = 200
+# # print(array.values)
+# # del array[1]
+# # print(array.values)
+# # print(len(array))
+#
+# array = SparseArray()
+# print(array.values)
+# array[5] = 4
+# array[0] = 13
+# array[10] = 23
+# array[5] = 81
+# array[7] = 100
+# print(array.values)
+# print(len(array))
+# print(array[20])
+# print(array.values)
 '-------------------------------------------------------'
 # class ShoppingCart:
 #
