@@ -23,38 +23,196 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Shape:
+#     pass
+#
+# class Polygon(Shape):
+#     count = 0
+#
+#     def __init__(self):
+#         Polygon.count += 1
+#
+# class Ellipse(Shape):
+#     pass
+#
+# class Rectangle(Polygon):
+#     count = 0
+#
+#     def __init__(self):
+#         super().__init__()
+#         Rectangle.count += 1
+#
+#
+# class Square(Rectangle):
+#
+#     def __init__(self):
+#         super().__init__()
+#
+# class Triangle(Polygon):
+#
+#     def __init__(self):
+#         super().__init__()
+#
+# class Circle(Ellipse):
+#     count = 0
+#     def __init__(self):
+#         Circle.count += 1
+#
+# shapes = [
+#     Polygon(), Triangle(), Ellipse(), Polygon(), Triangle(), Ellipse(), Polygon(), Square(), Polygon(), Circle(),
+#     Shape(), Polygon(), Triangle(), Circle(), Ellipse(), Shape(), Circle(), Rectangle(), Circle(), Circle(),
+#     Square(), Square(), Circle(), Rectangle(), Rectangle(), Polygon(), Polygon(), Polygon(), Square(), Square(),
+#     Rectangle(), Square(), Rectangle(), Polygon(), Circle(), Triangle(), Rectangle(), Shape(), Rectangle(),
+#     Polygon(), Polygon(), Ellipse(), Square(), Circle(), Shape(), Polygon(), Ellipse(), Triangle(), Square(),
+#     Polygon(), Triangle(), Circle(), Rectangle(), Rectangle(), Ellipse(), Triangle(), Rectangle(), Polygon(),
+#     Shape(), Circle(), Rectangle(), Polygon(), Triangle(), Circle(), Polygon(), Rectangle(), Polygon(), Square(),
+#     Triangle(), Circle(), Ellipse(), Circle(), Shape(), Circle(), Triangle(), Ellipse(), Square(), Circle(),
+#     Triangle(), Polygon(), Square(), Polygon(), Circle(), Ellipse(), Polygon(), Shape(), Triangle(), Rectangle(),
+#     Circle(), Square(), Triangle(), Triangle(), Ellipse(), Square(), Circle(), Rectangle(), Ellipse(), Shape(),
+#     Triangle(), Ellipse(), Circle(), Shape(), Polygon(), Polygon(), Ellipse(), Rectangle(), Square(), Shape(),
+#     Circle(), Triangle(), Circle(), Circle(), Circle(), Triangle(), Ellipse(), Polygon(), Circle(), Ellipse(),
+#     Rectangle(), Circle(), Shape(), Polygon(), Polygon(), Triangle(), Rectangle(), Polygon(), Shape(), Circle(),
+#     Shape(), Circle(), Triangle(), Ellipse(), Square(), Circle(), Triangle(), Ellipse(), Square(), Circle(),
+# ]
+#
+# print(Circle.count, Rectangle.count, Polygon.count)
+# print(29, 33, 79)
 '-------------------------------------------------------'
+# class Shape:
+#     pass
+#
+# class Polygon(Shape):
+#     pass
+# class Ellipse(Shape):
+#     pass
+#
+# class Rectangle(Polygon):
+#     pass
+# class Square(Rectangle):
+#     pass
+#
+# class Triangle(Polygon):
+#     pass
+#
+# class Circle(Ellipse):
+#     pass
+#
+# # # Ниже располагаются проверки
+# #
+# # assert issubclass(Ellipse, Shape), "Класс Ellipse должен наследоваться от Shape"
+# # assert issubclass(Polygon, Shape), "Класс Polygon должен наследоваться от Shape"
+# #
+# # assert issubclass(Circle, Shape), "Класс Circle должен наследоваться от Shape"
+# # assert issubclass(Circle, Ellipse), "Класс Circle должен наследоваться от Ellipse"
+# # assert not issubclass(Circle, Polygon), "Класс Circle не должен наследоваться от Polygon"
+# #
+# # assert issubclass(Triangle, Polygon), "Класс Triangle должен наследоваться от Polygon"
+# # assert issubclass(Triangle, Shape), "Класс Triangle должен наследоваться от Shape"
+# # assert not issubclass(Triangle, Ellipse), "Класс Triangle не должен наследоваться от Ellipse"
+# #
+# # assert issubclass(Square, Rectangle), "Класс Square должен наследоваться от Rectangle"
+# # assert issubclass(Square, Polygon), "Класс Square должен наследоваться от Polygon"
+# # assert issubclass(Square, Shape), "Класс Square должен наследоваться от Shape"
+# # assert not issubclass(Square, Ellipse), "Класс Square не должен наследоваться от Ellipse"
+# # print('Good')
+#
+# shapes = [
+#     Polygon(), Triangle(), Ellipse(), Polygon(), Triangle(), Ellipse(), Polygon(), Square(), Polygon(), Circle(),
+#     Shape(), Polygon(), Triangle(), Circle(), Ellipse(), Shape(), Circle(), Rectangle(), Circle(), Circle(),
+#     Square(), Square(), Circle(), Rectangle(), Rectangle(), Polygon(), Polygon(), Polygon(), Square(), Square(),
+#     Rectangle(), Square(), Rectangle(), Polygon(), Circle(), Triangle(), Rectangle(), Shape(), Rectangle(),
+#     Polygon(), Polygon(), Ellipse(), Square(), Circle(), Shape(), Polygon(), Ellipse(), Triangle(), Square(),
+#     Polygon(), Triangle(), Circle(), Rectangle(), Rectangle(), Ellipse(), Triangle(), Rectangle(), Polygon(),
+#     Shape(), Circle(), Rectangle(), Polygon(), Triangle(), Circle(), Polygon(), Rectangle(), Polygon(), Square(),
+#     Triangle(), Circle(), Ellipse(), Circle(), Shape(), Circle(), Triangle(), Ellipse(), Square(), Circle(),
+#     Triangle(), Polygon(), Square(), Polygon(), Circle(), Ellipse(), Polygon(), Shape(), Triangle(), Rectangle(),
+#     Circle(), Square(), Triangle(), Triangle(), Ellipse(), Square(), Circle(), Rectangle(), Ellipse(), Shape(),
+#     Triangle(), Ellipse(), Circle(), Shape(), Polygon(), Polygon(), Ellipse(), Rectangle(), Square(), Shape(),
+#     Circle(), Triangle(), Circle(), Circle(), Circle(), Triangle(), Ellipse(), Polygon(), Circle(), Ellipse(),
+#     Rectangle(), Circle(), Shape(), Polygon(), Polygon(), Triangle(), Rectangle(), Polygon(), Shape(), Circle(),
+#     Shape(), Circle(), Triangle(), Ellipse(), Square(), Circle(), Triangle(), Ellipse(), Square(), Circle(),
+# ]
+#
+# circles = 0
+# rectangles = 0
+# polygons = 0
+#
+# for shape in shapes:
+#     if isinstance(shape, Circle):
+#         circles += 1
+#     elif isinstance(shape, Rectangle):
+#         rectangles += 1
+#         polygons += 1
+#     elif isinstance(shape, Polygon):
+#         polygons += 1
+#
+# print(circles, rectangles, polygons, sep='\n')
+#
+# circles = 0
+# rectangles = 0
+# polygons = 0
+#
+# for shape in shapes:
+#     circles += isinstance(shape, Circle)
+#     rectangles += isinstance(shape, Rectangle)
+#     polygons += isinstance(shape, Polygon)
+#
+# print(circles, rectangles, polygons, sep='\n')
 '-------------------------------------------------------'
+# class Person:
+#
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def get_name(self):
+#         return self.name
+#
+#     def is_employee(self):
+#         return False
+#
+# class Employee(Person):
+#
+#     def is_employee(self):
+#         return True
+#
+# # Ниже располагается код для проверки
+# assert issubclass(Employee, Person)
+#
+# p = Person("just human")
+# assert p.name == 'just human'
+# assert p.get_name() == 'just human'
+# assert p.is_employee() is False
+#
+# emp = Employee("Geek")
+# assert emp.name == 'Geek'
+# assert emp.get_name() == 'Geek'
+# assert emp.is_employee() is True
+# print('Good')
 '-------------------------------------------------------'
-# class AttributeChecker:
+# class Vehicle:
 #
-#     def __contains__(self, attribute):
-#         return attribute in self.__dict__
+#     def __init__(self, name, max_speed, mileage):
+#         self.name = name
+#         self.max_speed = max_speed
+#         self.mileage = mileage
 #
+#     def display_info(self):
+#         print(f"Vehicle Name: {self.name}, Speed: {self.max_speed}, Mileage: {self.mileage}")
 #
-# # Тест 1: Проверка наличия отсутствующего атрибута
-# check = AttributeChecker()
-# assert "name" not in check
-# assert "age" not in check
-# setattr(check, 'name', 'Russell')
-# check.age = 10
+# class Bus(Vehicle):
+#     pass
 #
-# # Тест 2: Проверка добавления атрибутов
-# assert "name" in check
-# assert "age" in check
+# class Car(Vehicle):
+#     pass
 #
-# # Тест 3: Проверка атрибутов другого ЭК
-# check_2 = AttributeChecker()
-# assert "name" not in check_2
-# assert "age" not in check_2
+# class Plane(Vehicle):
+#     pass
 #
+# class Boat(Vehicle):
+#     pass
 #
-# # Тест 4: Проверка наличия атрибутов после удаления
-# delattr(check, "name")
-# assert "name" not in check
-# assert "age" in check
-#
-# print("Good")
+# class RaceCar(Car):
+#     pass
 '-------------------------------------------------------'
 # class SparseArray:
 #
