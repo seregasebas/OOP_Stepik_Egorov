@@ -20,8 +20,90 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class Square:
+#     def get_value(self, a):
+#         return a * a
+#
+# class Cube(Square):
+#     def get_value(self, a):
+#         return a ** 3
+#
+# class Power4(Square):
+#     def get_value(self, a):
+#         return a ** 4
+#
+# assert issubclass(Cube, Square)
+# assert issubclass(Power4, Square)
+#
+# cube = Cube()
+# assert cube.get_value(2) == 8
+# assert cube.get_value(-17) == -4913
+#
+# power4 = Power4()
+# assert power4.get_value(5) == 625
+# assert power4.get_value(25) == 390625
+#
+# print('Good')
 '-------------------------------------------------------'
+# class NewInt(int):
+#
+#     def repeat(self, n=2):
+#         return int(str(self) * n)
+#
+#     def to_bin(self):
+#         return int(f"{self:b}")
+#
+# c1 = NewInt(9)
+# # assert c1.repeat() == 18
+# # print(c1.repeat())
+# assert isinstance(c1, NewInt)
+# assert issubclass(NewInt, int)
+# assert c1 + 9 == 18
+# assert c1 * 9 == 81
+#
+#
+# c2 = NewInt(31)
+# print(c2.repeat())
+# assert c2.repeat() == 3131
+# assert c2.repeat(4) == 31313131
+# print(NewInt(16).to_bin())
+# assert NewInt(16).to_bin() == 10000
+# assert NewInt(14).to_bin() == 1110
+#
+# print('Good')
 '-------------------------------------------------------'
+# class MyList(list):
+#
+#     def remove_all(self, value):
+#         for lst in self.copy():
+#             if lst == value:
+#                 self.remove(lst)
+#
+# # Ниже располагаются проверки для класса MyList
+# s = MyList([1, 2, 3, 2, 1, 2])
+# assert s == [1, 2, 3, 2, 1, 2]
+# print(s)
+# s.remove_all(2)
+# assert s == [1, 3, 1]
+# s.remove_all(1)
+# assert s == [3]
+# s.remove_all(5)
+# assert s == [3]
+# s.remove_all(3)
+# assert s == []
+#
+# k = MyList([0]*20)
+# assert k == [0]*20
+# k.remove_all(7)
+# assert k == [0]*20
+# k.append(8)
+# k.append(0)
+# k.append(2)
+# print(f"k = {k}")
+# k.remove_all(0)
+# print(f"k = {k}")
+# assert k == [8, 2]
+# print('Good')
 '-------------------------------------------------------'
 # class Shape:
 #     pass
