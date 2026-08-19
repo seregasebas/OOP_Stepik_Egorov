@@ -21,7 +21,49 @@ print('Hello World!')
 '-------------------------------------------------------'
 '-------------------------------------------------------'
 '-------------------------------------------------------'
+# class PrettyPrint:
+#
+#     def __str__(self):
+#         new_list = [f'{key}={value}' for key, value in self.__dict__.items()]
+#         return f'{self.__class__.__name__}({", ".join(new_list)})'
+#
+# class Person(PrettyPrint):
+#     def __init__(self, first_name, last_name, age):
+#         self.first_name = first_name
+#         self.last_name = last_name
+#         self.age = age
+#
+# artem = Person('Artem', 'Egorov', 33)
+# ivan = Person('Ivan', 'Ivanov', 45)
+# print(artem)
+# print(ivan)
 '-------------------------------------------------------'
+# class Date:
+#     def __init__(self, day, month, year):
+#         self._day = day
+#         self._month = month
+#         self._year = year
+#
+#     def isoformat(self):
+#         return f"{self._year:04}-{self._month:02}-{self._day:02}"
+#
+# class DateEurope(Date):
+#
+#     def format(self):
+#         return f"{self._day:02}/{self._month:02}/{self._year:04}"
+#
+# class DateUSA(Date):
+#
+#     def format(self):
+#         return f"{self._month:02}/{self._day:02}/{self._year:04}"
+#
+#
+# d = DateUSA(1, 5, 890)
+# print(d.format())
+# print(d.isoformat())
+# print(isinstance(d, DateEurope))
+# print(isinstance(d, Date))
+# print(isinstance(d, DateUSA))
 '-------------------------------------------------------'
 # class Shape:
 #     pass
